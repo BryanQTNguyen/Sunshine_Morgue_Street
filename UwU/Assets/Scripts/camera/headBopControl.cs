@@ -30,7 +30,7 @@ public class headBopControl : MonoBehaviour
         if (!_enable) return;
         CheckMotion();
         ResetPosition();
-        _camera.LookAt(FocusTarget());
+        //_camera.LookAt(FocusTarget());
     }
     private Vector3 FootStepMotion()
     {
@@ -62,5 +62,6 @@ public class headBopControl : MonoBehaviour
     {
         if (_camera.localPosition == _startPos) return;
         _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime);
+        
     }
 }
