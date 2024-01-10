@@ -6,6 +6,7 @@ public class Tape : MonoBehaviour
 {
     [SerializeField] GameObject obj, intText;
     public bool interactable;
+    public string VHSName;
 
     void OnTriggerStay(Collider other)
     {
@@ -40,6 +41,7 @@ public class Tape : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //intText.SetActive(false);
+                // VHSName = GameObject.nam I left off here
                 obj.SetActive(false);
                 interactable = false; 
             }

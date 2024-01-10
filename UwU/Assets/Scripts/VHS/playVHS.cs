@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class playVHS : MonoBehaviour
 {
-    public GameObject intText, TVOff, TVOn, vhs;
+    public GameObject intText, TVOff, vhs;
+    public GameObject TVOn, TVOnTwo, TVOnThree;
     public bool interactable, toggle;
     public Animator vhsAnim;
     public float videoTime;
@@ -36,6 +37,10 @@ public class playVHS : MonoBehaviour
             interactable = false;
         }
     }
+    public void playVHSstarter()
+    {
+        
+    }
 
     void Update()
     {
@@ -44,7 +49,7 @@ public class playVHS : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //intText.SetActive(false);
-                vhsAnim.SetTrigger("play");
+                vhsAnim.SetTrigger("playIn");
                 StartCoroutine(playVHSTape());
                 toggle = true;
                 interactable = false;
@@ -59,6 +64,7 @@ public class playVHS : MonoBehaviour
         TVOn.SetActive(true);
         yield return new WaitForSeconds(videoTime);
         TVOff.SetActive(true);
+        vhsAnim.SetTrigger("playOut");
         TVOn.SetActive(false);
     }
 }
