@@ -41,7 +41,7 @@ public class Tape : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //intText.SetActive(false);
-                // VHSName = GameObject.nam I left off here
+                VHSName = gameObject.name;
                 obj.SetActive(false);
                 interactable = false; 
             }
