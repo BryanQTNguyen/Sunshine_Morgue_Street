@@ -9,10 +9,12 @@ public class playVHS : MonoBehaviour
     public bool interactable, toggle;
     public Animator vhsAnim;
     public float videoTime;
+    bool tapeOutToggle;
 
     private void Start()
     {
         toggle = false;
+        tapeOutToggle = false;
     }
     void OnTriggerStay(Collider other)
     {
@@ -44,7 +46,13 @@ public class playVHS : MonoBehaviour
 
     void Update()
     {
-        if(interactable == true)
+        if(tapeOutToggle)
+        {
+            vhsAnim.SetTrigger("playOut");
+            tapeOutToggle = false;
+
+        }
+        if (interactable == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -63,8 +71,8 @@ public class playVHS : MonoBehaviour
         TVOff.SetActive(false);
         TVOn.SetActive(true);
         yield return new WaitForSeconds(videoTime);
+        tapeOutToggle = true;
         TVOff.SetActive(true);
-        vhsAnim.SetTrigger("playOut");
         TVOn.SetActive(false);
     }
 }

@@ -2022,6 +2022,7 @@ GameObject:
   - component: {fileID: 1825977305}
   - component: {fileID: 1825977306}
   - component: {fileID: 1825977307}
+  - component: {fileID: 1825977308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2185,6 +2186,28 @@ MonoBehaviour:
   _camera: {fileID: 1445920844}
   _cameraHolder: {fileID: 1356126184}
   PlayerMovement: {fileID: 1825977305}
+--- !u!114 &1825977308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825977300}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f3d6bcf0ab6ad46a6ff8ec7011d7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  dropForwardForce: 0
+  dropUpwardForce: 0
+  equipped: 0
+  canPickUp: 0
+  coll: {fileID: 0}
+  itemContainer: {fileID: 1338786567}
+  player: {fileID: 1825977304}
+  camera: {fileID: 1445920844}
+  inHandItem: 
 --- !u!1 &2034638162
 GameObject:
   m_ObjectHideFlags: 0
