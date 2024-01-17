@@ -6,7 +6,8 @@ public class objectPickUp : MonoBehaviour
 {
     private Rigidbody rb;
     private Transform objectGrabPointTransform;
-    public string InventoryName;
+    private string InventoryName;
+    [SerializeField] InventoryTwo inventoryTwo;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,12 +16,15 @@ public class objectPickUp : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransformInv;
         rb.useGravity = false;
+        rb.isKinematic = true;
     }
     public void Drop()
     {
         this.objectGrabPointTransform = null;
         rb.useGravity = true;
+        rb.isKinematic = false;
         InventoryName = null;
+        inventoryTwo.CurrentlyEquipped = null;
     }
 
     private void FixedUpdate()
@@ -30,6 +34,7 @@ public class objectPickUp : MonoBehaviour
             float lerpSpeed = 10f;
             Vector3 newPosition = Vector3.Lerp(rb.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             InventoryName = gameObject.name;
+            inventoryTwo.CurrentlyEquipped = InventoryName;
             rb.MovePosition(newPosition);
         }
     }

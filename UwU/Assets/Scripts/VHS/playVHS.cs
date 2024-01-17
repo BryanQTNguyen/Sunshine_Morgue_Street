@@ -6,62 +6,42 @@ public class playVHS : MonoBehaviour
 {
     public GameObject intText, TVOff, vhs;
     public GameObject TVOn, TVOnTwo, TVOnThree;
-    public bool interactable, toggle;
+    public int WhatTape;
     public Animator vhsAnim;
     public float videoTime;
     bool tapeOutToggle;
 
     private void Start()
     {
-        toggle = false;
-        tapeOutToggle = false;
-    }
-    void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("MainCamera"))
-        {
-            if (toggle == false)
-            {
-                if (vhs.active == false)
-                {
-                    //intText.SetActive(false);
-                    interactable = true;
-                }
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("MainCamera"))
-        {
-            //intText.SetActive(false);
-            interactable = false;
-        }
-    }
-    public void playVHSstarter()
-    {
-        
     }
 
     void Update()
     {
-        if(tapeOutToggle)
+        if (tapeOutToggle)
         {
             vhsAnim.SetTrigger("playOut");
             tapeOutToggle = false;
 
         }
-        if (interactable == true)
+    }
+
+    public void PlayVHSTape(string VHSTapeName, float VideoTime)
+    {
+        if (VHSTapeName == "Tape1" || VHSTapeName == "Tape2" || VHSTapeName == "Tape3")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //intText.SetActive(false);
-                vhsAnim.SetTrigger("playIn");
-                StartCoroutine(playVHSTape());
-                toggle = true;
-                interactable = false;
-            }
+            videoTime = VideoTime;
+            vhsAnim.SetTrigger("playIn");
+            if (VHSTapeName == "Tape1")
+                WhatTape = 1;
+            if (VHSTapeName == "Tape2")
+                WhatTape = 2;
+            if (VHSTapeName == "Tape3")
+                WhatTape = 3;
+            StartCoroutine(playVHSTape());
+        }
+        else
+        {
+            Debug.Log("This is no VHS");
         }
     }
 
@@ -69,10 +49,17 @@ public class playVHS : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         TVOff.SetActive(false);
-        TVOn.SetActive(true);
+        if(WhatTape ==1)
+            TVOn.SetActive(true);
+        if (WhatTape == 2)
+            TVOnTwo.SetActive(true);
+        if (WhatTape == 3)
+            TVOnThree.SetActive(true);
         yield return new WaitForSeconds(videoTime);
         tapeOutToggle = true;
         TVOff.SetActive(true);
         TVOn.SetActive(false);
+        TVOnTwo.SetActive(false);
+        TVOnThree.SetActive(false);
     }
 }
