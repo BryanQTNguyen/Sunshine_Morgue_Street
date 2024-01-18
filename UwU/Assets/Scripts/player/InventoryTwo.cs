@@ -8,9 +8,11 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] Transform playerCameraTransform;
     [SerializeField] LayerMask pickUpLayerMask;
     [SerializeField] Transform objectGrabPointTransformInv;
-    public string CurrentlyEquipped;
+    public string CurrentlyEquipped = null;
+    public bool currentlyEquippedBool = false;
+    public GameObject CurrentGameObject;
 
-    private objectPickUp ObjectPickUp;
+    public objectPickUp ObjectPickUp;
     private playVHS PlayVHS;
     // Start is called before the first frame update
     void Start()
@@ -31,8 +33,9 @@ public class InventoryTwo : MonoBehaviour
                     ObjectPickUp.Grab(objectGrabPointTransformInv);
                 }
 
-                if (raycastHit.transform.TryGetComponent(out PlayVHS) && CurrentlyEquipped != null)
+                if (raycastHit.transform.TryGetComponent(out PlayVHS) && currentlyEquippedBool == true)
                 {
+                    Debug.Log("hi");
                     if(CurrentlyEquipped == "Tape1")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 20f);
                     else if (CurrentlyEquipped == "Tape2")
@@ -41,12 +44,12 @@ public class InventoryTwo : MonoBehaviour
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 40f);
                 }
             }
-
         }
-        if(Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKeyDown(KeyCode.Q) && currentlyEquippedBool == true) 
         { 
-            if(CurrentlyEquipped != null)
+            if(currentlyEquippedBool == true)
             {
+                ObjectPickUp = CurrentGameObject.GetComponent<objectPickUp>();
                 ObjectPickUp.Drop();
                 ObjectPickUp = null;
             }

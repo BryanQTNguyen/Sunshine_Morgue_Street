@@ -10,6 +10,7 @@ public class playVHS : MonoBehaviour
     public Animator vhsAnim;
     public float videoTime;
     bool tapeOutToggle;
+    bool videoPlayingToggle;
 
     private void Start()
     {
@@ -27,8 +28,9 @@ public class playVHS : MonoBehaviour
 
     public void PlayVHSTape(string VHSTapeName, float VideoTime)
     {
-        if (VHSTapeName == "Tape1" || VHSTapeName == "Tape2" || VHSTapeName == "Tape3")
+        if ((VHSTapeName == "Tape1" || VHSTapeName == "Tape2" || VHSTapeName == "Tape3") && videoPlayingToggle == false)
         {
+            videoPlayingToggle = true;
             videoTime = VideoTime;
             vhsAnim.SetTrigger("playIn");
             if (VHSTapeName == "Tape1")
@@ -57,6 +59,7 @@ public class playVHS : MonoBehaviour
             TVOnThree.SetActive(true);
         yield return new WaitForSeconds(videoTime);
         tapeOutToggle = true;
+        videoPlayingToggle = false;
         TVOff.SetActive(true);
         TVOn.SetActive(false);
         TVOnTwo.SetActive(false);
