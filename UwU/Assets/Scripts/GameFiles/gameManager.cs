@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
+    public bool VHSVideoPlaying = false;
     public static gameManager Instance;
     private void Awake()
     {

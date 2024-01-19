@@ -13,11 +13,14 @@ public class InventoryTwo : MonoBehaviour
     public GameObject CurrentGameObject;
 
     public objectPickUp ObjectPickUp;
-    private playVHS PlayVHS;
+    [SerializeField] playVHS PlayVHS;
+    [SerializeField] GameObject managerObj;
+    [SerializeField] gameManager GameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        managerObj = GameObject.Find("gameManager");
+        GameManager = managerObj.GetComponent<gameManager>();
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class InventoryTwo : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q) && currentlyEquippedBool == true) 
+        if (Input.GetKeyDown(KeyCode.Q) && currentlyEquippedBool == true && GameManager.VHSVideoPlaying == false) 
         { 
             if(currentlyEquippedBool == true)
             {

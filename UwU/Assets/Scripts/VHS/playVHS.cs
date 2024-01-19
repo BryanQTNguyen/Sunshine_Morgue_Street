@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class playVHS : MonoBehaviour
 {
+    [SerializeField] GameObject managerObj;
+    [SerializeField] gameManager GameManager;
     public GameObject intText, TVOff, vhs;
     public GameObject TVOn, TVOnTwo, TVOnThree;
     public int WhatTape;
     public Animator vhsAnim;
+    public Animator vhsTapeAnim;
     public float videoTime;
     bool tapeOutToggle;
-    bool videoPlayingToggle;
+    public bool videoPlayingToggle;
 
     private void Start()
     {
+        managerObj = GameObject.Find("gameManager");
+        GameManager = managerObj.GetComponent<gameManager>();
     }
 
     void Update()
@@ -21,6 +26,9 @@ public class playVHS : MonoBehaviour
         if (tapeOutToggle)
         {
             vhsAnim.SetTrigger("playOut");
+            vhsTapeAnim.SetBool("TapeOut", true);
+            vhsTapeAnim.SetBool("TapeIn", false);
+
             tapeOutToggle = false;
 
         }
@@ -31,7 +39,10 @@ public class playVHS : MonoBehaviour
         if ((VHSTapeName == "Tape1" || VHSTapeName == "Tape2" || VHSTapeName == "Tape3") && videoPlayingToggle == false)
         {
             videoPlayingToggle = true;
+            GameManager.VHSVideoPlaying = videoPlayingToggle;
             videoTime = VideoTime;
+            vhsTapeAnim.SetBool("TapeIn", true);
+            vhsTapeAnim.SetBool("TapeOut", false);
             vhsAnim.SetTrigger("playIn");
             if (VHSTapeName == "Tape1")
                 WhatTape = 1;
@@ -60,6 +71,7 @@ public class playVHS : MonoBehaviour
         yield return new WaitForSeconds(videoTime);
         tapeOutToggle = true;
         videoPlayingToggle = false;
+        GameManager.VHSVideoPlaying = videoPlayingToggle;
         TVOff.SetActive(true);
         TVOn.SetActive(false);
         TVOnTwo.SetActive(false);
