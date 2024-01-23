@@ -9,11 +9,18 @@ public class objectPickUp : MonoBehaviour
     private Transform objectGrabPointTransform = null;
     private string InventoryName;
     private Collider collider;
+
+
+    //scripts to serialize
+    [SerializeField] GameObject invenObject;
     [SerializeField] InventoryTwo inventoryTwo;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
+
+        invenObject = GameObject.Find("Player");
+        inventoryTwo = invenObject.GetComponent<InventoryTwo>();
     }
     public void Grab(Transform objectGrabPointTransformInv)
     {

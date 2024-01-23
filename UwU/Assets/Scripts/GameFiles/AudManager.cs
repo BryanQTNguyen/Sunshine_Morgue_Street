@@ -8,15 +8,16 @@ using Unity.VisualScripting;
 public class AudManager : MonoBehaviour
 {
     public static AudManager Instance;
-    public bool playBackgroundMusic;
-    public bool saloonMusic;
-    public bool townMusic;
-    public bool bankMusic;
-    public bool stationMusic;
-    public bool horseMusic;
+
+    public bool ApartmentAmbient;
+    public bool OutsideAmbient;
+    public bool workAmbient;
     public bool mainMenusBG;
-    public Sound[] musicSounds, sfxSounds, walkSound, dialogueSound;
-    public AudioSource musicSource, sfxSource, walkSource, dialogueSource;
+    private int musicType = 0;
+
+    public Sound[] musicSounds, sfxSounds, dialogueSound;
+    public AudioSource musicSource, sfxSource,dialogueSource;
+
     //[SerializeField] DialgoueManager dialogueManager;
     [SerializeField] GameObject dialogueObject;
 
@@ -36,28 +37,21 @@ public class AudManager : MonoBehaviour
     }
     private void Start()
     {
-        if (playBackgroundMusic == true)
-        {
 
-        }
     }
     public void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Combat")
+        if(ApartmentAmbient == true && musicType != 1)
         {
-            if (musicSource.clip.name == "onehorsetown")
-            {
-                PlayMusic("CombatBG");
-            }
+            PlayMusic("ApartAmbient");
+            musicType = 1;
         }
-        if (SceneManager.GetActiveScene().name != "Combat")
-        {
-            if (musicSource.clip.name == "lassolady" || musicSource.clip.name != "onehorsetown")
-            {
-                PlayMusic("TownBG");
-            }
-        }
-        /* This is for managing the dialogue audio
+
+
+
+
+        /*
+         This is for managing the dialogue audio
         if (SceneManager.GetActiveScene().name == "cutSceneFirst")
         {
             dialogueObject = GameObject.FindWithTag("dialogueManager");
@@ -107,21 +101,6 @@ public class AudManager : MonoBehaviour
         else
         {
             sfxSource.PlayOneShot(s.clip);
-        }
-    }
-
-    public void PlayWalk(string name)
-    {
-        Sound s = Array.Find(walkSound, x => x.name == name);
-
-        if (s == null)
-        {
-            Debug.Log("Walk sound not found!!!");
-        }
-        else
-        {
-            walkSource.clip = s.clip;
-            walkSource.Play();
         }
     }
 

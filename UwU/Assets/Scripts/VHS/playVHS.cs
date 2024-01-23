@@ -6,8 +6,11 @@ public class playVHS : MonoBehaviour
 {
     [SerializeField] GameObject managerObj;
     [SerializeField] gameManager GameManager;
+    [SerializeField] GameObject VHSTapeObj;
+
+
     public GameObject intText, TVOff, vhs;
-    public GameObject TVOn, TVOnTwo, TVOnThree;
+    public GameObject TVDefaultOn, TVOn, TVOnTwo, TVOnThree;
     public int WhatTape;
     public Animator vhsAnim;
     public Animator vhsTapeAnim;
@@ -15,12 +18,13 @@ public class playVHS : MonoBehaviour
     bool tapeOutToggle;
     public bool videoPlayingToggle;
 
-    private void Start()
+    private void Awake()
     {
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
+        vhsAnim = gameObject.GetComponent<Animator>();
     }
-
+       
     void Update()
     {
         if (tapeOutToggle)
@@ -41,15 +45,23 @@ public class playVHS : MonoBehaviour
             videoPlayingToggle = true;
             GameManager.VHSVideoPlaying = videoPlayingToggle;
             videoTime = VideoTime;
+
+            VHSTapeObj = GameObject.Find(VHSTapeName);
+            vhsTapeAnim = VHSTapeObj.GetComponent<Animator>();
+
+
             vhsTapeAnim.SetBool("TapeIn", true);
             vhsTapeAnim.SetBool("TapeOut", false);
+
             vhsAnim.SetTrigger("playIn");
+            
             if (VHSTapeName == "Tape1")
                 WhatTape = 1;
             if (VHSTapeName == "Tape2")
                 WhatTape = 2;
             if (VHSTapeName == "Tape3")
                 WhatTape = 3;
+
             StartCoroutine(playVHSTape());
         }
         else
@@ -62,6 +74,8 @@ public class playVHS : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         TVOff.SetActive(false);
+        TVDefaultOn.SetActive(true);
+        yield return new WaitForSeconds(7f);
         if(WhatTape ==1)
             TVOn.SetActive(true);
         if (WhatTape == 2)
