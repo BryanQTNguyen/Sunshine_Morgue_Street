@@ -10,7 +10,7 @@ public class playVHS : MonoBehaviour
 
 
     public GameObject intText, TVOff, vhs;
-    public GameObject TVDefaultOn, TVOn, TVOnTwo, TVOnThree;
+    public GameObject TVDefaultOn, TVOn, TVOnTwo, TVOnThree, TVDefaulfOff;
     public int WhatTape;
     public Animator vhsAnim;
     public Animator vhsTapeAnim;
@@ -75,14 +75,22 @@ public class playVHS : MonoBehaviour
         yield return new WaitForSeconds(2f);
         TVOff.SetActive(false);
         TVDefaultOn.SetActive(true);
-        yield return new WaitForSeconds(7f);
-        if(WhatTape ==1)
+        
+        yield return new WaitForSeconds(8f);
+        TVDefaultOn.SetActive(false);
+        if (WhatTape ==1)
             TVOn.SetActive(true);
         if (WhatTape == 2)
             TVOnTwo.SetActive(true);
         if (WhatTape == 3)
             TVOnThree.SetActive(true);
+       
         yield return new WaitForSeconds(videoTime);
+        TVDefaulfOff.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        TVDefaulfOff.SetActive(false);
+
         tapeOutToggle = true;
         videoPlayingToggle = false;
         GameManager.VHSVideoPlaying = videoPlayingToggle;
