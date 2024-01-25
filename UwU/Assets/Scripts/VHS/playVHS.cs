@@ -54,7 +54,9 @@ public class playVHS : MonoBehaviour
             vhsTapeAnim.SetBool("TapeOut", false);
 
             vhsAnim.SetTrigger("playIn");
-            
+            AudManager.Instance.PlaySFX("VHSInsert");
+
+
             if (VHSTapeName == "Tape1")
                 WhatTape = 1;
             if (VHSTapeName == "Tape2")
@@ -86,9 +88,15 @@ public class playVHS : MonoBehaviour
             TVOnThree.SetActive(true);
        
         yield return new WaitForSeconds(videoTime);
+        if (WhatTape == 1)
+            TVOn.SetActive(false);
+        if (WhatTape == 2)
+            TVOnTwo.SetActive(false);
+        if (WhatTape == 3)
+            TVOnThree.SetActive(false);
         TVDefaulfOff.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         TVDefaulfOff.SetActive(false);
 
         tapeOutToggle = true;

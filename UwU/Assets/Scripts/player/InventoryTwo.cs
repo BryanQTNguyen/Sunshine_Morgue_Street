@@ -26,7 +26,7 @@ public class InventoryTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.VHSVideoPlaying == false)
         {
             float pickUpdistance = 5f;
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpdistance, pickUpLayerMask))
@@ -42,7 +42,7 @@ public class InventoryTwo : MonoBehaviour
                     if(CurrentlyEquipped == "Tape1")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 20f);
                     else if (CurrentlyEquipped == "Tape2")
-                        PlayVHS.PlayVHSTape(CurrentlyEquipped, 30f);
+                        PlayVHS.PlayVHSTape(CurrentlyEquipped, 1449f);
                     else if (CurrentlyEquipped == "Tape3")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 40f);
                 }
