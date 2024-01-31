@@ -53,10 +53,10 @@ MonoBehaviour:
     m_Value: 1
   distanceMin:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 3
   distanceMax:
     m_OverrideState: 1
-    m_Value: 90
+    m_Value: 25
   fogFalloffCurve:
     m_OverrideState: 1
     m_Value: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
     m_Value: 1
   fogFalloffModeLayer1:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   colorLayer1:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -133,7 +133,7 @@ MonoBehaviour:
   active: 1
   isFrameLimitEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   frameLimit:
     m_OverrideState: 1
     m_Value: 60
@@ -170,7 +170,7 @@ MonoBehaviour:
   active: 1
   isPSXQualityEnabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
 --- !u!114 &-134696107197617816
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -195,10 +195,10 @@ MonoBehaviour:
     m_Value: 0.532
   graypointIn:
     m_OverrideState: 1
-    m_Value: 0.211
+    m_Value: 0.248
   graypointOut:
     m_OverrideState: 1
-    m_Value: 0.101
+    m_Value: 0.164
   whitepoint:
     m_OverrideState: 1
     m_Value: 10
@@ -345,10 +345,10 @@ MonoBehaviour:
     m_Value: 1
   scanlineSharpness:
     m_OverrideState: 1
-    m_Value: 0.537
+    m_Value: 0.737
   imageSharpness:
     m_OverrideState: 1
-    m_Value: 0.437
+    m_Value: 0.574
   bloomSharpnessX:
     m_OverrideState: 1
     m_Value: 0
@@ -363,10 +363,10 @@ MonoBehaviour:
     m_Value: 0.174
   grateMaskIntensityMin:
     m_OverrideState: 1
-    m_Value: 0.295
+    m_Value: 0.252
   grateMaskIntensityMax:
     m_OverrideState: 1
-    m_Value: 0.305
+    m_Value: 0.269
   barrelDistortionX:
     m_OverrideState: 1
     m_Value: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_Value: 0.001
   vignette:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.332
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3
