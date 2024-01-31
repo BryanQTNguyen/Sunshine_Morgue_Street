@@ -252,7 +252,7 @@ MonoBehaviour:
     m_Value: 1
   geometry:
     m_OverrideState: 1
-    m_Value: 0.858
+    m_Value: 0.688
   geometryPushbackEnabled:
     m_OverrideState: 0
     m_Value: 1
