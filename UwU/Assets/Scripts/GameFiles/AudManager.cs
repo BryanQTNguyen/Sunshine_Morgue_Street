@@ -15,8 +15,8 @@ public class AudManager : MonoBehaviour
     public bool mainMenusBG;
     private int musicType = 0;
 
-    public Sound[] musicSounds, sfxSounds, dialogueSound;
-    public AudioSource musicSource, sfxSource,dialogueSource;
+    public Sound[] musicSounds, sfxSounds, dialogueSound, rainSounds;
+    public AudioSource musicSource, sfxSource,dialogueSource, rainSource;
 
     //[SerializeField] DialgoueManager dialogueManager;
     [SerializeField] GameObject dialogueObject;
@@ -41,9 +41,10 @@ public class AudManager : MonoBehaviour
     }
     public void Update()
     {
-        if(ApartmentAmbient == true && musicType != 1)
+        if(OutsideAmbient == true && musicType != 1)
         {
             PlayMusic("ApartAmbient");
+            PlayRain("RainOutside");
             musicType = 1;
         }
 
@@ -87,6 +88,20 @@ public class AudManager : MonoBehaviour
         {
             musicSource.clip = s.clip;
             musicSource.Play();
+        }
+    }
+    public void PlayRain(string name)
+    {
+        Sound s = Array.Find(rainSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Rain not found!!!");
+        }
+        else
+        {
+            rainSource.clip = s.clip;
+            rainSource.Play();
         }
     }
 
