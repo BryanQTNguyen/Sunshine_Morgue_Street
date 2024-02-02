@@ -170,7 +170,7 @@ MonoBehaviour:
   active: 1
   isPSXQualityEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &-134696107197617816
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -189,25 +189,25 @@ MonoBehaviour:
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 0.558
+    m_Value: 0.434
   shoulder:
     m_OverrideState: 1
-    m_Value: 0.532
+    m_Value: 0.549
   graypointIn:
     m_OverrideState: 1
-    m_Value: 0.248
+    m_Value: 0.389
   graypointOut:
     m_OverrideState: 1
-    m_Value: 0.164
+    m_Value: 0.311
   whitepoint:
     m_OverrideState: 1
     m_Value: 10
   crossTalk:
     m_OverrideState: 1
-    m_Value: 0.468
+    m_Value: 0.48
   saturation:
     m_OverrideState: 1
-    m_Value: 0.079
+    m_Value: 0.096
   crossTalkSaturation:
     m_OverrideState: 1
     m_Value: 0.034
@@ -348,7 +348,7 @@ MonoBehaviour:
     m_Value: 0.737
   imageSharpness:
     m_OverrideState: 1
-    m_Value: 0.574
+    m_Value: 0.534
   bloomSharpnessX:
     m_OverrideState: 1
     m_Value: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_Value: 0.001
   vignette:
     m_OverrideState: 1
-    m_Value: 0.332
+    m_Value: 0.265
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3
