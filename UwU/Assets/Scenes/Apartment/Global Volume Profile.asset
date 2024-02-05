@@ -37,7 +37,7 @@ MonoBehaviour:
     m_Value: 1
   blendMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   color:
     m_OverrideState: 1
     m_Value: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
@@ -53,10 +53,10 @@ MonoBehaviour:
     m_Value: 1
   distanceMin:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1.64
   distanceMax:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 2.14
   fogFalloffCurve:
     m_OverrideState: 1
     m_Value: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Value: 0.48
   saturation:
     m_OverrideState: 1
-    m_Value: 0.096
+    m_Value: 0.03
   crossTalkSaturation:
     m_OverrideState: 1
     m_Value: 0.034
@@ -264,10 +264,10 @@ MonoBehaviour:
     m_Value: 0.53
   chroma:
     m_OverrideState: 1
-    m_Value: 0.33333334
+    m_Value: 0.484
   alpha:
     m_OverrideState: 1
-    m_Value: 0.568
+    m_Value: 0.542
   affineTextureWarping:
     m_OverrideState: 1
     m_Value: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     m_Value: 0
   dynamicLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 54.98
+    m_Value: 55.5
   dynamicLightsMaxCount:
     m_OverrideState: 1
     m_Value: 256
@@ -345,10 +345,10 @@ MonoBehaviour:
     m_Value: 1
   scanlineSharpness:
     m_OverrideState: 1
-    m_Value: 0.737
+    m_Value: 0.626
   imageSharpness:
     m_OverrideState: 1
-    m_Value: 0.534
+    m_Value: 0.181
   bloomSharpnessX:
     m_OverrideState: 1
     m_Value: 0
@@ -363,19 +363,19 @@ MonoBehaviour:
     m_Value: 0.174
   grateMaskIntensityMin:
     m_OverrideState: 1
-    m_Value: 0.252
+    m_Value: 0.112
   grateMaskIntensityMax:
     m_OverrideState: 1
-    m_Value: 0.269
+    m_Value: 0.102
   barrelDistortionX:
     m_OverrideState: 1
     m_Value: 0
   barrelDistortionY:
     m_OverrideState: 1
-    m_Value: 0.001
+    m_Value: 0
   vignette:
     m_OverrideState: 1
-    m_Value: 0.265
+    m_Value: 0.189
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -473,7 +473,7 @@ MonoBehaviour:
     m_Value: 0
   mode:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   colorspace:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 2
