@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -341,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 262247847}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.6, y: 13.9, z: -68.8}
+  m_LocalPosition: {x: 230.3, y: 13.9, z: -46.7}
   m_LocalScale: {x: 35.915485, y: 25.53789, z: 41.95202}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1013,7 +1013,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 5000
+    maxNumParticles: 3000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 1
     rotation3D: 0
@@ -1081,7 +1081,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 350, y: 1, z: 350}
+    m_Scale: {x: 400, y: 1, z: 400}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -5174,7 +5174,7 @@ Transform:
   m_GameObject: {fileID: 451560658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 65.7, z: 0}
+  m_LocalPosition: {x: 101, y: 65.7, z: 101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5377,15 +5377,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 30bfdcaedbe6eb94f928adf1a0c48e8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -84.6
+      value: -69.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 30bfdcaedbe6eb94f928adf1a0c48e8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 30bfdcaedbe6eb94f928adf1a0c48e8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 63.5
+      value: 295.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 30bfdcaedbe6eb94f928adf1a0c48e8c, type: 3}
       propertyPath: m_LocalRotation.w
