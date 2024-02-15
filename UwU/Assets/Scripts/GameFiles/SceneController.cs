@@ -19,107 +19,58 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        canvas = GameObject.Find("Canvas");
+        transitionAnim = canvas.GetComponent<Animator>();
+
     }
     public Animator transitionAnim;
+    public GameObject canvas;
     public int sceneID;
 
     public void searchScenes(string searched)
     {
-        if (searched == "Saloon")
-            saloon();
-        if (searched == "Bank Interrior")
-            bank();
-        if (searched == "Barn-stable")
-            barnStable();
-        if (searched == "Combat")
-            combat();
-        if (searched == "cutSceneFirst")
-            toFirstCutScene();
-        if (searched == "LoseScene")
-            lose();
+        if (searched == "Apartment")
+            Apartment();
+        if (searched == "Outside")
+            Outside();
         if (searched == "MainMenu")
-            mainMenu();
-        if (searched == "SampleScene")
-            outsideWorld();
-        if (searched == "Train Station")
-            trainStation();
-        if (searched == "WinScene")
-            win();
-        if (searched == "lastFight")
-        {
-            win();
-        }
+            MainMenu();
+        if (searched == "Win")
+            Win();
+        if (searched == "Lose")
+            Lose();
 
     }
 
-    public void mainMenu()
+    public void Apartment()
     {
         sceneID = 0;
         StartCoroutine(LoadScene());
 
     }
-    public void toFirstCutScene()
+    public void Outside()
     {
         sceneID = 1;
         StartCoroutine(LoadScene());
 
     }
-    public void trainStation()
+    public void MainMenu()
     {
         sceneID = 2;
         StartCoroutine(LoadScene());
 
     }
-    public void outsideWorld()
+    public void Win()
     {
         sceneID = 3;
         StartCoroutine(LoadScene());
 
     }
-    public void saloon()
+    public void Lose()
     {
         sceneID = 4;
         StartCoroutine(LoadScene());
 
-    }
-    public void bank()
-    {
-        sceneID = 5;
-        StartCoroutine(LoadScene());
-
-    }
-    public void combat()
-    {
-        sceneID = 6;
-        StartCoroutine(LoadScene());
-
-    }
-    public void lose()
-    {
-        sceneID = 7;
-        StartCoroutine(LoadScene());
-
-    }
-    public void win()
-    {
-        sceneID = 8;
-        StartCoroutine(LoadScene());
-
-    }
-    public void instructions()
-    {
-        sceneID = 9;
-        StartCoroutine(LoadScene());
-    }
-    public void barnStable()
-    {
-        sceneID = 10;
-        StartCoroutine(LoadScene());
-    }
-    public void lastFight()
-    {
-        sceneID = 11;
-        StartCoroutine(LoadScene());
     }
     public void quitGame()
     {
@@ -129,10 +80,8 @@ public class SceneController : MonoBehaviour
     IEnumerator LoadScene()
     {
         transitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadSceneAsync(sceneID);
-
-
     }
 
 }
