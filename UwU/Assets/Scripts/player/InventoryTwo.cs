@@ -11,16 +11,20 @@ public class InventoryTwo : MonoBehaviour
     public string CurrentlyEquipped = null;
     public bool currentlyEquippedBool = false;
     public GameObject CurrentGameObject;
-
     public objectPickUp ObjectPickUp;
     [SerializeField] playVHS PlayVHS;
+    [SerializeField] doorOpen DoorOpen;
     [SerializeField] GameObject managerObj;
     [SerializeField] gameManager GameManager;
+    [SerializeField] GameObject SceneManagerObj;
+    [SerializeField] SceneController sceneController;
     // Start is called before the first frame update
     void Start()
     {
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
+        SceneManagerObj = GameObject.Find("SceneController");
+        sceneController = SceneManagerObj.GetComponent<SceneController>();
     }
 
     // Update is called once per frame
@@ -38,13 +42,17 @@ public class InventoryTwo : MonoBehaviour
 
                 if (raycastHit.transform.TryGetComponent(out PlayVHS) && currentlyEquippedBool == true)
                 {
-                    Debug.Log("hi");
                     if(CurrentlyEquipped == "Tape1")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 20f);
                     else if (CurrentlyEquipped == "Tape2")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 1449f);
                     else if (CurrentlyEquipped == "Tape3")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 40f);
+                }
+                if (raycastHit.transform.TryGetComponent(out DoorOpen))
+                {
+                    sceneController.searchScenes(DoorOpen.SceneTo);
+
                 }
             }
         }
