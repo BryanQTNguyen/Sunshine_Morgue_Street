@@ -195,10 +195,10 @@ MonoBehaviour:
     m_Value: 0.549
   graypointIn:
     m_OverrideState: 1
-    m_Value: 0.389
+    m_Value: 0.497
   graypointOut:
     m_OverrideState: 1
-    m_Value: 0.311
+    m_Value: 0.362
   whitepoint:
     m_OverrideState: 1
     m_Value: 10
@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Value: 0.48
   saturation:
     m_OverrideState: 1
-    m_Value: 0.03
+    m_Value: 0.072
   crossTalkSaturation:
     m_OverrideState: 1
     m_Value: 0.034
