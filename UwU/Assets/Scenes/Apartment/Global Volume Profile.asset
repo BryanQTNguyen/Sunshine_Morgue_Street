@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Value: 0.48
   saturation:
     m_OverrideState: 1
-    m_Value: 0.072
+    m_Value: 0
   crossTalkSaturation:
     m_OverrideState: 1
     m_Value: 0.034
@@ -363,10 +363,10 @@ MonoBehaviour:
     m_Value: 0.174
   grateMaskIntensityMin:
     m_OverrideState: 1
-    m_Value: 0.112
+    m_Value: 0.072
   grateMaskIntensityMax:
     m_OverrideState: 1
-    m_Value: 0.102
+    m_Value: 0.079
   barrelDistortionX:
     m_OverrideState: 1
     m_Value: 0
