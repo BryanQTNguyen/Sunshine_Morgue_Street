@@ -11,20 +11,10 @@ public class DialgoueManager : MonoBehaviour
     public static DialgoueManager Instance;
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
 
-        else
-        {
-            Destroy(gameObject);
-        }
 
     }
     //All the variables for the displaying dialgoue 
-    public Image actorImage;
     public TMP_Text actorName;
     public string AudioToPlay;
     public TMP_Text messageText;
@@ -40,7 +30,6 @@ public class DialgoueManager : MonoBehaviour
     public bool muteDialogueAudio;
 
     Message[] currentMessages;
-    Actor[] currentActor;
     string[] currentAudio;
 
     int currentEnemy;
@@ -52,11 +41,10 @@ public class DialgoueManager : MonoBehaviour
 
     public FadeScript fadeScript;
 
-    public void OpenDialogue(Message[] messages, Actor[] actors, string[] audios)
+    public void OpenDialogue(Message[] messages, string[] audios)
     {
         fadeScript.ShowDialogue();
         currentMessages = messages;
-        currentActor = actors;
         currentAudio = audios;
         activeMessage = 0;
         isActive = true;
@@ -70,12 +58,10 @@ public class DialgoueManager : MonoBehaviour
         Message messageToDisplay = currentMessages[activeMessage];
         messageText.text = messageToDisplay.message;
 
+        /*
         AudioToPlay = currentAudio[activeMessage];
         AudManager.Instance.PlayDialogue(AudioToPlay);
-
-        Actor actorToDisplay = currentActor[messageToDisplay.actorId];
-        actorName.text = actorToDisplay.name;
-        actorImage.sprite = actorToDisplay.sprite;
+        */
     }
     public void NextMessage()
     {

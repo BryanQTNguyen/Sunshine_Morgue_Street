@@ -24,6 +24,14 @@ public class SceneController : MonoBehaviour
         transitionAnim = canvas.GetComponent<Animator>();
 
     }
+    public void Update()
+    {
+        if(transitionAnim == null)
+        {
+            canvas = GameObject.Find("Canvas");
+            transitionAnim = canvas.GetComponent<Animator>();
+        }
+    }
     public Animator transitionAnim;
     public GameObject canvas;
     public int sceneID;

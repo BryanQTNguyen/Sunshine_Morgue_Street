@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InventoryTwo : MonoBehaviour
@@ -18,6 +19,8 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] gameManager GameManager;
     [SerializeField] GameObject SceneManagerObj;
     [SerializeField] SceneController sceneController;
+    [SerializeField] DialogueTrigger dialogueTrigger;
+    [SerializeField] FadeScript fadeScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,10 @@ public class InventoryTwo : MonoBehaviour
                 {
                     sceneController.searchScenes(DoorOpen.SceneTo);
 
+                }
+                if(raycastHit.transform.TryGetComponent(out dialogueTrigger) && fadeScript.doneFadingOut == true)
+                {
+                    dialogueTrigger.StartDialogue();
                 }
             }
         }
