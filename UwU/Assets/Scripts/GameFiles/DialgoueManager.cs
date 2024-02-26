@@ -9,11 +9,6 @@ using UnityEditor.VersionControl;
 public class DialgoueManager : MonoBehaviour
 {
     public static DialgoueManager Instance;
-    private void Awake()
-    {
-
-
-    }
     //All the variables for the displaying dialgoue 
     public TMP_Text actorName;
     public string AudioToPlay;
@@ -40,6 +35,7 @@ public class DialgoueManager : MonoBehaviour
 
 
     public FadeScript fadeScript;
+
 
     public void OpenDialogue(Message[] messages, string[] audios)
     {
@@ -70,22 +66,25 @@ public class DialgoueManager : MonoBehaviour
         {
             DisplayMessage();
         }
+        
         else
         {
+            
             if (dialogueTrigger.isCutScene == false)
             {
                 isActive = false;
-                fadeScript.HideDialogueFade();
+                fadeScript.HideDialogue();
                 muteDialogueAudio = true;
 
             }
+            
             else if (dialogueTrigger.isCutScene == true)
             {
                 muteDialogueAudio = true;
                 AudManager.Instance.PlayDialogue("Silence");
                 continueButton.gameObject.SetActive(true);
             }
-        }
+       }
     }
     // Start is called before the first frame update
     void Start()
@@ -101,9 +100,22 @@ public class DialgoueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == true && fadeScript.doneFadingIn == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isActive == true && fadeScript.doneFadingIn == true && manager.isInTalkingRangeMain == true)
         {
             NextMessage();
+        }
+        if(manager == null)
+        {
+            managerObj = GameObject.Find("gameManager");
+            manager = managerObj.GetComponent<gameManager>();
+        }
+
+        if(manager.isInTalkingRangeMain == false && isActive == true)
+        {
+            fadeScript.HideDialogueFade();
+            muteDialogueAudio = true;
+            isActive = false;
+            Debug.Log("Kai Cenat rizzler");
         }
     }
 }

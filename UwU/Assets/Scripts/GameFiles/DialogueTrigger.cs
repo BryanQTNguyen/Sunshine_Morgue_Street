@@ -27,7 +27,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void StartDialogue()
     {
-        FindObjectOfType<DialgoueManager>().OpenDialogue(messages, audios);
+        if(isInTalkingRange == true && fadeScript.doneFadingOut == true)
+        {
+            FindObjectOfType<DialgoueManager>().OpenDialogue(messages, audios);
+        }
     }
 
     void Update()
@@ -48,18 +51,20 @@ public class DialogueTrigger : MonoBehaviour
 
 
     }
-    public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             isInTalkingRange = true;
+            FindObjectOfType<gameManager>().isInTalkingRangeMain = isInTalkingRange;
         }
     }
-    private void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             isInTalkingRange = false;
+            FindObjectOfType<gameManager>().isInTalkingRangeMain = isInTalkingRange;
             index = 0;
         }
     }
@@ -68,6 +73,5 @@ public class DialogueTrigger : MonoBehaviour
 [System.Serializable]
 public class Message
 {
-    public int actorId;
     public string message;
 }

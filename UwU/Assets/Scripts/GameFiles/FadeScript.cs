@@ -24,7 +24,7 @@ public class FadeScript : MonoBehaviour
     {
         if (fadeIn)
         {
-            if (myUIGroup.alpha < 1)
+            if (myUIGroup.alpha <= 1)
             {
                 myUIGroup.alpha += Time.deltaTime;
                 if (myUIGroup.alpha >= 1)

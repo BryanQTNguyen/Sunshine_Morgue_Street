@@ -6,6 +6,8 @@ public class gameManager : MonoBehaviour
 {
     public bool VHSVideoPlaying = false;
     public static gameManager Instance;
+
+    public bool isInTalkingRangeMain;
     private void Awake()
     {
         if (Instance == null)

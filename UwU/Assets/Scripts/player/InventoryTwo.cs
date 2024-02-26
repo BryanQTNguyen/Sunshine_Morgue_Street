@@ -59,7 +59,10 @@ public class InventoryTwo : MonoBehaviour
                 }
                 if(raycastHit.transform.TryGetComponent(out dialogueTrigger) && fadeScript.doneFadingOut == true)
                 {
-                    dialogueTrigger.StartDialogue();
+                    if(GameManager.isInTalkingRangeMain == true)
+                    {
+                        dialogueTrigger.StartDialogue();
+                    }
                 }
             }
         }
