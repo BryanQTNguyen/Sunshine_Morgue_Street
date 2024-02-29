@@ -463,17 +463,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   isEnabled:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   weight:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   accuracy:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   mode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   colorspace:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
