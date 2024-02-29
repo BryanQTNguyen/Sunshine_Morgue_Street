@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: DefaultOpaqueMat
   m_Shader: {fileID: 4800000, guid: 055eab4e84dc70a47ae75b3125a22de6, type: 3}
-  m_Parent: {fileID: 2100000, guid: 2d40a4694e1430547ac590eef7fbc7bc, type: 2}
+  m_Parent: {fileID: 2100000, guid: 2a5864db851b1c440ad9b5a912a11943, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _BRDF_MODE_LAMBERT
@@ -29,11 +29,7 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f24278fb8fc2130499bd0ec6f3246292, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats: []
     m_Colors: []
