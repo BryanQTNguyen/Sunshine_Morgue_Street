@@ -189,7 +189,7 @@ MonoBehaviour:
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 0.434
+    m_Value: 0.497
   shoulder:
     m_OverrideState: 1
     m_Value: 0.549
@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Value: 0.48
   saturation:
     m_OverrideState: 1
-    m_Value: 0.096
+    m_Value: 0.054
   crossTalkSaturation:
     m_OverrideState: 1
     m_Value: 0.034
@@ -264,7 +264,7 @@ MonoBehaviour:
     m_Value: 0.53
   chroma:
     m_OverrideState: 1
-    m_Value: 0.33333334
+    m_Value: 0.539
   alpha:
     m_OverrideState: 1
     m_Value: 0.568
