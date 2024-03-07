@@ -52,7 +52,12 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
-
+            if (searched == "Morgue")
+            {
+                Morgue();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
             if (searched == "MainMenu")
             {
                 MainMenu();
@@ -71,6 +76,7 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
+
         }
         else if (SceneCoolDown == false)
             StartCoroutine(SceneCool());
@@ -88,11 +94,10 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadScene());
 
     }
-    public void MainMenu()
+    public void Morgue()
     {
         sceneID = 2;
         StartCoroutine(LoadScene());
-
     }
     public void Win()
     {
@@ -106,6 +111,13 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadScene());
 
     }
+    public void MainMenu()
+    {
+        sceneID = 5;
+        StartCoroutine(LoadScene());
+
+    }
+
     public void quitGame()
     {
         Application.Quit();
