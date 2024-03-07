@@ -132,10 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   isFrameLimitEnabled:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   frameLimit:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 60
   aspectMode:
     m_OverrideState: 1
@@ -195,10 +195,10 @@ MonoBehaviour:
     m_Value: 0.549
   graypointIn:
     m_OverrideState: 1
-    m_Value: 0.497
+    m_Value: 0.575
   graypointOut:
     m_OverrideState: 1
-    m_Value: 0.362
+    m_Value: 0.635
   whitepoint:
     m_OverrideState: 1
     m_Value: 10
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_Value: 0
   vignette:
     m_OverrideState: 1
-    m_Value: 0.439
+    m_Value: 0.412
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3
