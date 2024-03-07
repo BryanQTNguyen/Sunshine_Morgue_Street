@@ -5,6 +5,7 @@ using UnityEngine;
 public class doorOpen : MonoBehaviour
 {
     public string SceneTo;
+    public bool MorgueToOut;
     // Start is called before the first frame update
     void Start()
     {

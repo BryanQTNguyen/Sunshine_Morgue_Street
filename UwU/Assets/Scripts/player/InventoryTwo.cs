@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class InventoryTwo : MonoBehaviour
 {
@@ -53,7 +55,15 @@ public class InventoryTwo : MonoBehaviour
                 }
                 if (raycastHit.transform.TryGetComponent(out DoorOpen))
                 {
-                    sceneController.searchScenes(DoorOpen.SceneTo);
+                    if(DoorOpen.SceneTo != "Outside")
+                    {
+                        sceneController.searchScenes(DoorOpen.SceneTo);
+
+                    }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Morgue")
+                    {
+                        sceneController.searchScenes("Outside");
+                        GameManager.relocatePlayer();
+                    }
 
                 }
                 if(raycastHit.transform.TryGetComponent(out dialogueTrigger) && fadeScript.doneFadingOut == true)

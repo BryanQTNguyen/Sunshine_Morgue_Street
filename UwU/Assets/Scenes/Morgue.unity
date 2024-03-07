@@ -6083,6 +6083,9 @@ GameObject:
   - component: {fileID: 985538293}
   - component: {fileID: 985538295}
   - component: {fileID: 985538294}
+  - component: {fileID: 985538298}
+  - component: {fileID: 985538297}
+  - component: {fileID: 985538296}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -6155,6 +6158,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985538292}
   m_Mesh: {fileID: 2619086233303812490, guid: e50c745289510534996a67d4180f67f9, type: 3}
+--- !u!54 &985538296
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985538292}
+  serializedVersion: 4
+  m_Mass: 1000000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &985538297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985538292}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2550789, y: 2.4243004, z: 0.07538498}
+  m_Center: {x: -0.63575584, y: 1.2139047, z: -0.038608912}
+--- !u!114 &985538298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985538292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d99dd9605abd045946358d152a5749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneTo: Outside
 --- !u!1001 &985941187
 PrefabInstance:
   m_ObjectHideFlags: 0
