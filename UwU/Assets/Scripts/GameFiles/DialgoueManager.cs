@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class DialgoueManager : MonoBehaviour
 {
     public static DialgoueManager Instance;
     //All the variables for the displaying dialgoue 
-    public TMP_Text actorName;
+    public Text actorName;
     public string AudioToPlay;
-    public TMP_Text messageText;
+    public Text messageText;
     public RectTransform backgroundBox;
     [SerializeField] private DialogueTrigger dialogueTrigger;
     [SerializeField] private GameObject continueButton;
