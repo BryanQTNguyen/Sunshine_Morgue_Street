@@ -63,6 +63,8 @@ public class InventoryTwo : MonoBehaviour
                     {
                         sceneController.searchScenes("Outside");
                         GameManager.relocatePlayer();
+                    }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Apartment"){
+                        sceneController.searchScenes("Outside");
                     }
 
                 }
