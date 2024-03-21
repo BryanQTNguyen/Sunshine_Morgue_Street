@@ -21,10 +21,16 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] GameObject SceneManagerObj;
     [SerializeField] SceneController sceneController;
     [SerializeField] DialogueTrigger dialogueTrigger;
+    [SerializeField] BodyCabinet bodyCabinet;
     [SerializeField] FadeScript fadeScript;
+
+    public bool bodyEquipped;
+    [SerializeField] GameObject DeadBody;
+
     // Start is called before the first frame update
     void Start()
     {
+        bodyEquipped = false;
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
         SceneManagerObj = GameObject.Find("SceneController");
@@ -36,14 +42,16 @@ public class InventoryTwo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && GameManager.VHSVideoPlaying == false)
         {
-            float pickUpdistance = 5f;
+            float pickUpdistance = 2.5f;
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpdistance, pickUpLayerMask))
             {
-                if(raycastHit.transform.TryGetComponent(out ObjectPickUp))
+                // Picking up an object
+                if (raycastHit.transform.TryGetComponent(out ObjectPickUp))
                 {
                     ObjectPickUp.Grab(objectGrabPointTransformInv);
                 }
 
+                //Working with VHS tapes
                 if (raycastHit.transform.TryGetComponent(out PlayVHS) && currentlyEquippedBool == true)
                 {
                     if(CurrentlyEquipped == "Tape1")
@@ -53,6 +61,8 @@ public class InventoryTwo : MonoBehaviour
                     else if (CurrentlyEquipped == "Tape3")
                         PlayVHS.PlayVHSTape(CurrentlyEquipped, 40f);
                 }
+
+                //Working with the scene transition doors
                 if (raycastHit.transform.TryGetComponent(out DoorOpen))
                 {
                     if(DoorOpen.SceneTo != "Outside")
@@ -68,6 +78,8 @@ public class InventoryTwo : MonoBehaviour
                     }
 
                 }
+
+                //Working with dialogue messages
                 if(raycastHit.transform.TryGetComponent(out dialogueTrigger) && fadeScript.doneFadingOut == true)
                 {
                     if(GameManager.isInTalkingRangeMain == true)
@@ -75,8 +87,23 @@ public class InventoryTwo : MonoBehaviour
                         dialogueTrigger.StartDialogue();
                     }
                 }
+
+                if(raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true)
+                {
+                    bodyCabinet.BodyOut();
+                }
             }
         }
+
+        if (bodyEquipped == true)
+        {
+            DeadBody.SetActive(true);
+        }
+        else
+        {
+            DeadBody.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Q) && currentlyEquippedBool == true && GameManager.VHSVideoPlaying == false) 
         { 
             if(currentlyEquippedBool == true)
