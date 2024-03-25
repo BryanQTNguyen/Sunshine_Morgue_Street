@@ -88,8 +88,32 @@ public class InventoryTwo : MonoBehaviour
                     }
                 }
 
-                if(raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true)
+                //Taking the body out in Day 1
+                if(raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOne[0] != 1 &&
+                    SceneManager.GetActiveScene().name == "Morgue 1")
                 {
+                    GameManager.objectiveArrayDayOne[0] = 1;
+                    bodyCabinet.BodyOut();
+                }
+                //Taking the body out in Day 1
+                if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOneHalf[0] != 1 &&
+                    SceneManager.GetActiveScene().name == "Morgue Half")
+                {
+                    GameManager.objectiveArrayDayOneHalf[0] = 1;
+                    bodyCabinet.BodyOut();
+                }
+                //Taking the body out in Day 2
+                if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayTwo[0] != 1 &&
+                    SceneManager.GetActiveScene().name == "Morgue 2")
+                {
+                    GameManager.objectiveArrayDayTwo[0] = 1;
+                    bodyCabinet.BodyOut();
+                }
+                //Taking the body out in Day 3
+                if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayThree[0] != 1 &&
+                    SceneManager.GetActiveScene().name == "Morgue 3")
+                {
+                    GameManager.objectiveArrayDayThree[0] = 1;
                     bodyCabinet.BodyOut();
                 }
             }
