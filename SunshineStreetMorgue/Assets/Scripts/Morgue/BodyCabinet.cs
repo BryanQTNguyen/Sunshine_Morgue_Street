@@ -32,6 +32,5 @@ public class BodyCabinet : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         inventoryTwo.bodyEquipped = true;
-        Debug.Log("hi this is body");
     }
 }
