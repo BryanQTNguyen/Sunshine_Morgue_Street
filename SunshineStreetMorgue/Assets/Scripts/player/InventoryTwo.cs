@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,10 +22,22 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] GameObject SceneManagerObj;
     [SerializeField] SceneController sceneController;
     [SerializeField] DialogueTrigger dialogueTrigger;
-    [SerializeField] BodyCabinet bodyCabinet;
     [SerializeField] FadeScript fadeScript;
 
-    public bool bodyEquipped;
+
+
+
+
+
+
+    [SerializeField] BodyCabinet bodyCabinet;
+    [SerializeField] BodyBed bodyBed;
+    [SerializeField] WashHands washHands;
+    [SerializeField] WashBody washBody;
+    [SerializeField] Hygiene hygiene;
+    [SerializeField] BurnBody burnBody;
+
+    public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
     [SerializeField] GameObject DeadBody;
 
     // Start is called before the first frame update
@@ -42,7 +55,7 @@ public class InventoryTwo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && GameManager.VHSVideoPlaying == false)
         {
-            float pickUpdistance = 2.5f;
+            float pickUpdistance = 1.4f;
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpdistance, pickUpLayerMask))
             {
                 // Picking up an object
@@ -88,20 +101,44 @@ public class InventoryTwo : MonoBehaviour
                     }
                 }
 
-                //Taking the body out in Day 1
-                if(raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOne[0] != 1 &&
-                    SceneManager.GetActiveScene().name == "Morgue 1")
+                //Day 1 Functionality
+                if(SceneManager.GetActiveScene().name == "Morgue 1")
                 {
-                    GameManager.objectiveArrayDayOne[0] = 1;
-                    bodyCabinet.BodyOut();
+
+                    //Taking the Body Out
+                    if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOne[0] != 1)
+                    {
+                        GameManager.objectiveArrayDayOne[0] = 1;
+                        bodyCabinet.BodyOut();
+                    }
+                    //Placing the body down
+                    if(raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayOne[1] != 1)
+                    {
+
+                    }
+                    //Wash Hands
+                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) && GameManager.objectiveArrayDayOne[2] != 1)
+                    {
+
+                    }
+                    //Wash body
+                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) && GameManager.objectiveArrayDayOne[3] != 1)
+                    {
+
+                    }
+                    //Hygiene kit
+                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) && GameManager.objectiveArrayDayOne[4] != 1)
+                    {
+
+                    }
+                    //Burning the body
+                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(5, true) && GameManager.objectiveArrayDayOne[5] != 1)
+                    {
+
+                    }
                 }
-                //Taking the body out in Day 1
-                if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOneHalf[0] != 1 &&
-                    SceneManager.GetActiveScene().name == "Morgue Half")
-                {
-                    GameManager.objectiveArrayDayOneHalf[0] = 1;
-                    bodyCabinet.BodyOut();
-                }
+
+
                 //Taking the body out in Day 2
                 if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayTwo[0] != 1 &&
                     SceneManager.GetActiveScene().name == "Morgue 2")
@@ -137,6 +174,96 @@ public class InventoryTwo : MonoBehaviour
                 ObjectPickUp = null;
             }
         }
+    }
+
+    public bool ObjectiveChecker(int length, bool conditionMet)
+    {
+        if(SceneManager.GetActiveScene().name == "Morgue 1")
+        {
+            for (int i = 0; i < length; i++)
+            {
+                if (GameManager.objectiveArrayDayOne[i] != 1)
+                {
+                    conditionMet = false;
+                    break;
+                }
+            }
+            if(conditionMet == true)
+            {
+                return conditionMet;
+            }
+            else
+            {
+                return conditionMet; 
+            }
+            
+        }
+        if (SceneManager.GetActiveScene().name == "Morgue Half")
+        {
+            for (int i = 0; i < length; i++)
+            {
+                if (GameManager.objectiveArrayDayOneHalf[i] != 1)
+                {
+                    conditionMet = false;
+                    break;
+                }
+            }
+            if (conditionMet == true)
+            {
+                return conditionMet;
+            }
+            else
+            {
+                return conditionMet;
+            }
+
+        }
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+        {
+            for (int i = 0; i < length; i++)
+            {
+                if (GameManager.objectiveArrayDayTwo[i] != 1)
+                {
+                    conditionMet = false;
+                    break;
+                }
+            }
+            if (conditionMet == true)
+            {
+                return conditionMet;
+            }
+            else
+            {
+                return conditionMet;
+            }
+
+        }
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+        {
+            for (int i = 0; i < length; i++)
+            {
+                if (GameManager.objectiveArrayDayThree[i] != 1)
+                {
+                    conditionMet = false;
+                    break;
+                }
+            }
+            if (conditionMet == true)
+            {
+                return conditionMet;
+            }
+            else
+            {
+                return conditionMet;
+            }
+
+        }
+        else
+        {
+            return false;
+        }
+
+
     }
 }
 
