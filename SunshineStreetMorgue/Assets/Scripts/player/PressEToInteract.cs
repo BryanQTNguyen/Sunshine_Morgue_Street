@@ -6,6 +6,7 @@ public class PressEToInteract : MonoBehaviour
 {
     [SerializeField] GameObject PressEText;
     public bool show = false;
+    public string[] messages = new string[2];
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Interactable")
@@ -23,7 +24,7 @@ public class PressEToInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        messages = new string[2] { "Press 'E' To Interact", " " };
     }
 
     // Update is called once per frame
