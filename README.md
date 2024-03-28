@@ -16,7 +16,7 @@ Space Bar - Continue through Dialogue
 
 E - Interact
 
-**This is a 3D unity project created by 4 members:**
+**This is a 3D unity project created by 5 members:**
 
 Bryan Nguyen: Lead Programmer
 
