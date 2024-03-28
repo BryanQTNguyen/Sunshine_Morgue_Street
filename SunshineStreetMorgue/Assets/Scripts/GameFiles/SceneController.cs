@@ -52,7 +52,7 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
-            if (searched == "Morgue")
+            if (searched == "Morgue 1")
             {
                 Morgue();
                 SceneCoolDown = false;
