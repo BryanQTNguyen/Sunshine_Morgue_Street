@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: windowwall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6151228942778141548, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5570102620642811228, guid: 4a8910be2b47bee4f8e967cec234865b, type: 3}
     - target: {fileID: 8118818508414194746, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.690997
@@ -883,6 +887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (28)
@@ -2148,6 +2156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (6)
@@ -2371,6 +2383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (5)
@@ -3229,6 +3245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (22)
@@ -3503,6 +3523,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (2)
@@ -3761,6 +3785,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (15)
@@ -5343,6 +5371,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (8)
@@ -5474,6 +5506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (14)
@@ -5731,6 +5767,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (9)
@@ -6194,6 +6234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall
@@ -6530,6 +6574,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (12)
@@ -7654,6 +7702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: windowwall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6151228942778141548, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5570102620642811228, guid: 4a8910be2b47bee4f8e967cec234865b, type: 3}
     - target: {fileID: 8118818508414194746, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.121338
@@ -8196,6 +8248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (10)
@@ -8385,6 +8441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (24)
@@ -8442,6 +8502,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (26)
@@ -9133,6 +9197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (17)
@@ -9195,6 +9263,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (3)
@@ -9542,6 +9614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: windowwall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6151228942778141548, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5570102620642811228, guid: 4a8910be2b47bee4f8e967cec234865b, type: 3}
     - target: {fileID: 8118818508414194746, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.766502
@@ -9605,6 +9681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (25)
@@ -9921,6 +10001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 5379845670994258421, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Size.x
       value: 0.71370536
@@ -11648,6 +11732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (1)
@@ -12396,6 +12484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (13)
@@ -12881,6 +12973,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (31)
@@ -13080,6 +13176,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (30)
@@ -13812,6 +13912,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (11)
@@ -13883,6 +13987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: windowwall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6151228942778141548, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5570102620642811228, guid: 4a8910be2b47bee4f8e967cec234865b, type: 3}
     - target: {fileID: 8118818508414194746, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.7416
@@ -14262,6 +14370,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (33)
@@ -15164,6 +15276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (23)
@@ -15509,6 +15625,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (16)
@@ -15969,6 +16089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610839203}
     m_Modifications:
+    - target: {fileID: 5278322775324585246, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6281424698479989189, guid: 14b8df67a85983a43ac33beb5afa40fe, type: 3}
     - target: {fileID: 8538589093763817519, guid: bc02e77f0a625db4ebf674a5de05c2b2, type: 3}
       propertyPath: m_Name
       value: wall (7)
@@ -17449,6 +17573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: windowwall
       objectReference: {fileID: 0}
+    - target: {fileID: 6151228942778141548, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5570102620642811228, guid: 4a8910be2b47bee4f8e967cec234865b, type: 3}
     - target: {fileID: 8118818508414194746, guid: 44392ccfd64145c4f8d46b1bfadbca8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.715899
