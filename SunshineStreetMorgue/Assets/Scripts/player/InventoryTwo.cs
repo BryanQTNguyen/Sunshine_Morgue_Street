@@ -156,11 +156,11 @@ public class InventoryTwo : MonoBehaviour
             }
         }
 
-        if (bodyEquipped == true)
+        if (bodyEquipped == true && SceneManager.GetActiveScene().name == "Morgue 1")
         {
             DeadBody.SetActive(true);
         }
-        else
+        else if(SceneManager.GetActiveScene().name == "Morgue 1")
         {
             DeadBody.SetActive(false);
         }
