@@ -69,6 +69,16 @@ public class gameManager : MonoBehaviour
     {
         objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0 };
         objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Wash your hands", "Wash the Body", "Apply finishing touches with Hygine kit", "Burn the Body" };
+
+
+
+
+
+
+
+
+
+
         objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0 };
         objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Strap it down", "Wash your hands", "Water Boa- Wash the body", "Saw Off Leg 1", "Saw off Leg 2",
             "Apply finishing touches with Hygine kit", "Burn the Body" };

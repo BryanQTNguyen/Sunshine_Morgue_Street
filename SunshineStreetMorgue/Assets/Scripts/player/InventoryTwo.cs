@@ -108,18 +108,18 @@ public class InventoryTwo : MonoBehaviour
                     //Taking the Body Out
                     if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOne[0] != 1)
                     {
-                        GameManager.objectiveArrayDayOne[0] = 1;
-                        bodyCabinet.BodyOut();
+                        if(GameManager.objectiveArrayDayOne[0] != 1)
+                            bodyCabinet.BodyOut();
                     }
                     //Placing the body down
                     if(raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayOne[1] != 1)
                     {
-
+                        bodyBed.bodyDown();
                     }
                     //Wash Hands
                     if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) && GameManager.objectiveArrayDayOne[2] != 1)
                     {
-
+                        washHands.washHands();
                     }
                     //Wash body
                     if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) && GameManager.objectiveArrayDayOne[3] != 1)
@@ -156,11 +156,11 @@ public class InventoryTwo : MonoBehaviour
             }
         }
 
-        if (bodyEquipped == true && SceneManager.GetActiveScene().name == "Morgue 1")
+        if (bodyEquipped == true && GameManager.objectiveArrayDayOne[1] != 1 && SceneManager.GetActiveScene().name == "Morgue 1")
         {
             DeadBody.SetActive(true);
         }
-        else if(SceneManager.GetActiveScene().name == "Morgue 1")
+        else if(SceneManager.GetActiveScene().name == "Morgue 1" || GameManager.objectiveArrayDayOne[1] == 1)
         {
             DeadBody.SetActive(false);
         }
@@ -185,6 +185,7 @@ public class InventoryTwo : MonoBehaviour
                 if (GameManager.objectiveArrayDayOne[i] != 1)
                 {
                     conditionMet = false;
+                    print("Broke");
                     break;
                 }
             }
