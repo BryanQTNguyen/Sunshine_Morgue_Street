@@ -64,59 +64,35 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
-            if (searched == "Win")
-            {
-                Win();
-                SceneCoolDown = false;
-                StartCoroutine(SceneCool());
-            }
-            if (searched == "Lose")
-            {
-                Lose();
-                SceneCoolDown = false;
-                StartCoroutine(SceneCool());
-            }
 
         }
         else if (SceneCoolDown == false)
             StartCoroutine(SceneCool());
     }
-
-    public void Apartment()
+    public void MainMenu()
     {
         sceneID = 0;
         StartCoroutine(LoadScene());
 
     }
-    public void Outside()
+    public void Apartment()
     {
         sceneID = 1;
         StartCoroutine(LoadScene());
 
     }
-    public void Morgue()
+    public void Outside()
     {
         sceneID = 2;
         StartCoroutine(LoadScene());
+
     }
-    public void Win()
+    public void Morgue()
     {
         sceneID = 3;
         StartCoroutine(LoadScene());
-
     }
-    public void Lose()
-    {
-        sceneID = 4;
-        StartCoroutine(LoadScene());
 
-    }
-    public void MainMenu()
-    {
-        sceneID = 5;
-        StartCoroutine(LoadScene());
-
-    }
 
     public void quitGame()
     {

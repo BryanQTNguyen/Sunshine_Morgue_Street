@@ -36,22 +36,20 @@ public class AudManager : MonoBehaviour
     }
     public void Update()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu" && musicType != 2)
+        if(SceneManager.GetActiveScene().name == "MainMenu" && musicType != 1)
         {
             PlayMusic("ApartAmbient");
-            musicType = 2;
-        }
-        if (SceneManager.GetActiveScene().name == "Outside" && musicType != 1)
-        {
-            PlayMusic("ApartAmbient");
+            rainSource.volume = 0;
             PlayRain("RainOutside");
             musicType = 1;
         }
-        if (SceneManager.GetActiveScene().name == "Outside" && musicType != 1)
+        if (SceneManager.GetActiveScene().name != "Outside" && rainSource.volume == 1)
         {
-            PlayMusic("ApartAmbient");
-            PlayRain("RainOutside");
-            musicType = 1;
+            rainSource.volume = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Outside" && rainSource.volume == 0)
+        {
+            rainSource.volume = 1;
         }
 
 
