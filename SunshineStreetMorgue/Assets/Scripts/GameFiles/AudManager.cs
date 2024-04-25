@@ -8,11 +8,6 @@ using Unity.VisualScripting;
 public class AudManager : MonoBehaviour
 {
     public static AudManager Instance;
-
-    public bool ApartmentAmbient;
-    public bool OutsideAmbient;
-    public bool workAmbient;
-    public bool mainMenusBG;
     private int musicType = 0;
 
     public Sound[] musicSounds, sfxSounds, dialogueSound, rainSounds;
@@ -41,12 +36,24 @@ public class AudManager : MonoBehaviour
     }
     public void Update()
     {
-        if(OutsideAmbient == true && musicType != 1)
+        if(SceneManager.GetActiveScene().name == "MainMenu" && musicType != 2)
+        {
+            PlayMusic("ApartAmbient");
+            musicType = 2;
+        }
+        if (SceneManager.GetActiveScene().name == "Outside" && musicType != 1)
         {
             PlayMusic("ApartAmbient");
             PlayRain("RainOutside");
             musicType = 1;
         }
+        if (SceneManager.GetActiveScene().name == "Outside" && musicType != 1)
+        {
+            PlayMusic("ApartAmbient");
+            PlayRain("RainOutside");
+            musicType = 1;
+        }
+
 
 
 
