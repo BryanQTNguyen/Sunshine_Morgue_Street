@@ -40,7 +40,7 @@ MonoBehaviour:
     m_Value: 3
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+    m_Value: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   precisionAlpha:
     m_OverrideState: 1
     m_Value: 1
@@ -53,10 +53,10 @@ MonoBehaviour:
     m_Value: 1
   distanceMin:
     m_OverrideState: 1
-    m_Value: 8.4
+    m_Value: 2.39
   distanceMax:
     m_OverrideState: 1
-    m_Value: 20.4
+    m_Value: 7.51
   fogFalloffCurve:
     m_OverrideState: 1
     m_Value: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   active: 1
   skyMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   framebufferDitherWeight:
     m_OverrideState: 0
     m_Value: 1

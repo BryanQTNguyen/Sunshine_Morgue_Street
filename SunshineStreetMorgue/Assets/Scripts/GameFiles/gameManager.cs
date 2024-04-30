@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
+using TMPro;
 
 
 public class gameManager : MonoBehaviour
@@ -12,8 +13,10 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject SceneManagerObj;
     [SerializeField] SceneController sceneController;
     public bool isInTalkingRangeMain;
-
+    public bool taskStarted; // for morgue gameplay
     public GameObject Character;
+
+    public TMP_Text currentObjText;
 
     public int[] objectiveArrayDayOne = new int[6];
     /*
@@ -69,16 +72,6 @@ public class gameManager : MonoBehaviour
     {
         objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0 };
         objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Wash your hands", "Wash the Body", "Apply finishing touches with Hygine kit", "Burn the Body" };
-
-
-
-
-
-
-
-
-
-
         objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0 };
         objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Strap it down", "Wash your hands", "Water Boa- Wash the body", "Saw Off Leg 1", "Saw off Leg 2",
             "Apply finishing touches with Hygine kit", "Burn the Body" };
@@ -122,23 +115,12 @@ public class gameManager : MonoBehaviour
             Debug.Log("I moved you");
             needToRelocate = false;
         }
+    }
 
 
-        //Controls the objective messages
-        if(SceneManager.GetActiveScene().name == "Morgue 1")
-        {
-            for (int i = 0; i < objectiveArrayDayOne.Length; i++)
-            {
-                if (objectiveArrayDayOne[i] == 1)
-                {
-
-                }
-            }
-        }
-
-
-
-
+    public void changeObjText(string text)
+    {
+        currentObjText.text = text;
     }
 
     public void relocatePlayer()

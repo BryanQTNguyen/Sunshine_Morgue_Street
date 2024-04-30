@@ -31,8 +31,8 @@ public class BodyBed : MonoBehaviour
 
     public void bodyDown()
     {
-        print("Hi from body bed");
         anim.SetBool("BodyYes", true);
         GameManager.objectiveArrayDayOne[1] = 1;
+        GameManager.changeObjText("Wash Your Hands");
     }
 }

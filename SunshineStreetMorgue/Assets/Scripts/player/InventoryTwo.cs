@@ -15,6 +15,10 @@ public class InventoryTwo : MonoBehaviour
     public bool currentlyEquippedBool = false;
     public GameObject CurrentGameObject;
     public objectPickUp ObjectPickUp;
+    
+    
+    
+    
     [SerializeField] playVHS PlayVHS;
     [SerializeField] doorOpen DoorOpen;
     [SerializeField] GameObject managerObj;
@@ -84,8 +88,16 @@ public class InventoryTwo : MonoBehaviour
 
                     }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Morgue 1")
                     {
-                        sceneController.searchScenes("Outside");
-                        GameManager.relocatePlayer();
+                        if(GameManager.taskStarted == false)
+                        {
+                            sceneController.searchScenes("Outside");
+                            GameManager.relocatePlayer();
+                        }
+                        else
+                        {
+                            //tell them to finish the job first
+                        }
+                        
                     }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Apartment"){
                         sceneController.searchScenes("Outside");
                     }
@@ -109,7 +121,9 @@ public class InventoryTwo : MonoBehaviour
                     if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayOne[0] != 1)
                     {
                         if(GameManager.objectiveArrayDayOne[0] != 1)
+                        {
                             bodyCabinet.BodyOut();
+                        }
                     }
                     //Placing the body down
                     if(raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayOne[1] != 1)
