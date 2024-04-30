@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f7b4b43d392da4aa0edc7aa47211ca, type: 3}
   m_Name: QualityOverrideVolume
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   isPSXQualityEnabled:
     m_OverrideState: 1
     m_Value: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
   active: 1
   skyMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   framebufferDitherWeight:
     m_OverrideState: 0
     m_Value: 1
