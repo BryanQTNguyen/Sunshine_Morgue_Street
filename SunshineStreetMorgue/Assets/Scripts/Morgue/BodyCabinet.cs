@@ -29,6 +29,7 @@ public class BodyCabinet : MonoBehaviour
     }
     public void BodyOut()
     {
+        GameManager.taskStarted = true;        
         anim.SetTrigger("BodyOut");
         StartCoroutine(BodyTakeOut());
     }
@@ -37,5 +38,6 @@ public class BodyCabinet : MonoBehaviour
         yield return new WaitForSeconds(5f);
         inventoryTwo.bodyEquipped = true;
         GameManager.objectiveArrayDayOne[0] = 1;
+        GameManager.changeObjText("Place Body on Metal Bed");
     }
 }
