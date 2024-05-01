@@ -14,8 +14,6 @@ Material:
   m_ValidKeywords:
   - _BRDF_MODE_LAMBERT
   - _FOG_ON
-  - _LIGHTING_BAKED_ON
-  - _LIGHTING_DYNAMIC_ON
   - _SHADING_EVALUATION_MODE_PER_VERTEX
   - _TEXTURE_FILTER_MODE_TEXTURE_IMPORT_SETTINGS
   m_InvalidKeywords: []
@@ -48,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AffineTextureWarpingWeight: 1
+    - _AffineTextureWarpingWeight: 0
     - _AlphaClip: 0
     - _AlphaClippingDitherIsEnabled: 0
     - _BRDFMode: 0
@@ -63,7 +61,7 @@ Material:
     - _FogWeight: 1
     - _LightingBaked: 1
     - _LightingDynamic: 1
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _PrecisionColorOverrideMode: 0
     - _PrecisionGeometryOverrideMode: 0
     - _PrecisionGeometryWeight: 1

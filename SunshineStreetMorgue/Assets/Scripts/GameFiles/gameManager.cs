@@ -111,7 +111,7 @@ public class gameManager : MonoBehaviour
         if(needToRelocate == true && SceneManager.GetActiveScene().name == "Outside")
         {
             Character = GameObject.FindWithTag("Player");
-            Character.transform.position = new Vector3(103.55f, 1.04f, 110.27f);
+            Character.transform.position = new Vector3(116.68f, 0.31f, 101.34f);
             Debug.Log("I moved you");
             needToRelocate = false;
         }

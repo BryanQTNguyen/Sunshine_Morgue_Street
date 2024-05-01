@@ -131,8 +131,9 @@ public class InventoryTwo : MonoBehaviour
                         bodyBed.bodyDown();
                     }
                     //Wash Hands
-                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) && GameManager.objectiveArrayDayOne[2] != 1)
+                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) == true && GameManager.objectiveArrayDayOne[2] != 1)
                     {
+                        Debug.Log("hi");
                         washHands.washHands();
                     }
                     //Wash body
@@ -200,6 +201,7 @@ public class InventoryTwo : MonoBehaviour
                 {
                     conditionMet = false;
                     print("Broke");
+                    Debug.Log("BREAK");
                     break;
                 }
             }

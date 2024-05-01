@@ -14,8 +14,6 @@ Material:
   m_ValidKeywords:
   - _BRDF_MODE_LAMBERT
   - _FOG_ON
-  - _LIGHTING_BAKED_ON
-  - _LIGHTING_DYNAMIC_ON
   - _SHADING_EVALUATION_MODE_PER_VERTEX
   - _TEXTURE_FILTER_MODE_TEXTURE_IMPORT_SETTINGS
   m_InvalidKeywords: []
@@ -31,6 +29,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _LightingMode: 1
     m_Colors: []
   m_BuildTextureStacks: []

@@ -53,10 +53,10 @@ MonoBehaviour:
     m_Value: 1
   distanceMin:
     m_OverrideState: 1
-    m_Value: 2.39
+    m_Value: 3.78
   distanceMax:
     m_OverrideState: 1
-    m_Value: 7.51
+    m_Value: 7.66
   fogFalloffCurve:
     m_OverrideState: 1
     m_Value: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f7b4b43d392da4aa0edc7aa47211ca, type: 3}
   m_Name: QualityOverrideVolume
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   isPSXQualityEnabled:
     m_OverrideState: 1
     m_Value: 1
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bffa9ddd307306479a0e3689eb72441, type: 3}
   m_Name: PrecisionVolume
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   geometryEnabled:
     m_OverrideState: 1
     m_Value: 1
@@ -306,7 +306,7 @@ MonoBehaviour:
     m_Value: 0
   dynamicLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 54.98
+    m_Value: 51.19
   dynamicLightsMaxCount:
     m_OverrideState: 1
     m_Value: 256
@@ -331,7 +331,7 @@ MonoBehaviour:
     m_Value: 1
   bloom:
     m_OverrideState: 1
-    m_Value: 0.279
+    m_Value: 0.363
   grateMaskMode:
     m_OverrideState: 1
     m_Value: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_Value: 0
   vignette:
     m_OverrideState: 1
-    m_Value: 0.244
+    m_Value: 0.291
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3
