@@ -39,10 +39,12 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] WashHands washHands;
     [SerializeField] WashBody washBody;
     [SerializeField] Hygiene hygiene;
+    [SerializeField] ApplyHygiene applyHygiene;
     [SerializeField] BurnBody burnBody;
 
     public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
     [SerializeField] GameObject DeadBody;
+    [SerializeField] GameObject Kit;
 
     // Start is called before the first frame update
     void Start()
@@ -133,21 +135,24 @@ public class InventoryTwo : MonoBehaviour
                     //Wash Hands
                     if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) == true && GameManager.objectiveArrayDayOne[2] != 1)
                     {
-                        Debug.Log("hi");
                         washHands.washHands();
                     }
                     //Wash body
-                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) && GameManager.objectiveArrayDayOne[3] != 1)
+                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) == true && GameManager.objectiveArrayDayOne[3] != 1)
                     {
-
+                        washBody.washBody();
                     }
                     //Hygiene kit
-                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) && GameManager.objectiveArrayDayOne[4] != 1)
+                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) == true && GameManager.objectiveArrayDayOne[4] != 1)
                     {
-
+                        hygiene.HygieneKit();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out applyHygiene) && ObjectiveChecker(5, true) == true && GameManager.objectiveArrayDayOne[5] != 1)
+                    {
+                        hygiene.HygieneKit();
                     }
                     //Burning the body
-                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(5, true) && GameManager.objectiveArrayDayOne[5] != 1)
+                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(6, true) && GameManager.objectiveArrayDayOne[6] != 1)
                     {
 
                     }
@@ -178,6 +183,15 @@ public class InventoryTwo : MonoBehaviour
         else if(SceneManager.GetActiveScene().name == "Morgue 1" || GameManager.objectiveArrayDayOne[1] == 1)
         {
             DeadBody.SetActive(false);
+        }
+
+        if (GameManager.objectiveArrayDayOne[4] == 1 && SceneManager.GetActiveScene().name == "Morgue 1")
+        {
+            Kit.SetActive(true);
+        }
+        else if(SceneManager.GetActiveScene().name == "Morgue 1" || GameManager.objectiveArrayDayOne[4] == 1)
+        {
+            Kit.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && currentlyEquippedBool == true && GameManager.VHSVideoPlaying == false) 

@@ -15,10 +15,14 @@ public class gameManager : MonoBehaviour
     public bool isInTalkingRangeMain;
     public bool taskStarted; // for morgue gameplay
     public GameObject Character;
-
     public TMP_Text currentObjText;
 
-    public int[] objectiveArrayDayOne = new int[6];
+
+
+    //Day one helping
+    [SerializeField] GameObject ApplyHygiene;
+
+    public int[] objectiveArrayDayOne = new int[7];
     /*
     0 = Get body
     1 = Place Body Down
@@ -70,8 +74,8 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
-        objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0 };
-        objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Wash your hands", "Wash the Body", "Apply finishing touches with Hygine kit", "Burn the Body" };
+        objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0, 0 };
+        objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Wash your hands", "Wash the Body", "Get Hygiene Kit", "Apply the kit", "Burn the Body" };
         objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0 };
         objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Strap it down", "Wash your hands", "Water Boa- Wash the body", "Saw Off Leg 1", "Saw off Leg 2",
             "Apply finishing touches with Hygine kit", "Burn the Body" };
@@ -114,6 +118,25 @@ public class gameManager : MonoBehaviour
             Character.transform.position = new Vector3(116.68f, 0.31f, 101.34f);
             Debug.Log("I moved you");
             needToRelocate = false;
+        }
+
+
+
+
+
+        //Day One Morgue Helps
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+        {
+            if(ApplyHygiene == null)
+                ApplyHygiene = GameObject.Find("ApplyHygiene");
+            if (objectiveArrayDayOne[4] == 1 && objectiveArrayDayOne[5] != 1)
+            {
+                ApplyHygiene.SetActive(true);
+            }
+            else
+            {
+                ApplyHygiene.SetActive(false);
+            }
         }
     }
 

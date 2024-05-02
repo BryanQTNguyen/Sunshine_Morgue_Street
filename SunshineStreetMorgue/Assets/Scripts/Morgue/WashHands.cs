@@ -32,7 +32,6 @@ public class WashHands : MonoBehaviour
     }
     public void washHands()
     {
-        Debug.Log("hi");
         WaterFlow.SetActive(true);
         StartCoroutine(WashHand());
 

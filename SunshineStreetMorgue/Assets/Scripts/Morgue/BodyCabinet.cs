@@ -9,9 +9,11 @@ public class BodyCabinet : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
+    [SerializeField] GameObject Collider;
     // Start is called before the first frame update
     void Start()
     {
+        Collider.SetActive(false);
         player = GameObject.Find("Player");
         inventoryTwo = player.GetComponent<InventoryTwo>();
         GameManagerObj = GameObject.Find("gameManager");
@@ -31,6 +33,7 @@ public class BodyCabinet : MonoBehaviour
     {
         GameManager.taskStarted = true;        
         anim.SetTrigger("BodyOut");
+        Collider.SetActive(true);
         StartCoroutine(BodyTakeOut());
     }
     public IEnumerator BodyTakeOut()
@@ -38,6 +41,7 @@ public class BodyCabinet : MonoBehaviour
         yield return new WaitForSeconds(5f);
         inventoryTwo.bodyEquipped = true;
         GameManager.objectiveArrayDayOne[0] = 1;
+        Collider.SetActive(false);
         GameManager.changeObjText("Place Body on Metal Bed");
     }
 }
