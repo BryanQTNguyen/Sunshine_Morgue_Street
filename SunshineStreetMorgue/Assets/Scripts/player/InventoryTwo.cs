@@ -149,10 +149,14 @@ public class InventoryTwo : MonoBehaviour
                     }
                     if (raycastHit.transform.TryGetComponent(out applyHygiene) && ObjectiveChecker(5, true) == true && GameManager.objectiveArrayDayOne[5] != 1)
                     {
-                        hygiene.HygieneKit();
+                        applyHygiene.ApplyHygieneKit();
                     }
                     //Burning the body
                     if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(6, true) && GameManager.objectiveArrayDayOne[6] != 1)
+                    {
+
+                    }
+                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayOne[7] != 1)
                     {
 
                     }

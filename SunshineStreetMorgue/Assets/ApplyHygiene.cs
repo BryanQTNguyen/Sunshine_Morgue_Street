@@ -9,9 +9,13 @@ public class ApplyHygiene : MonoBehaviour
     [SerializeField] InventoryTwo inventoryTwo;
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
+    [SerializeField] Animator anim;
+    [SerializeField] GameObject Colliders;
+
     // Start is called before the first frame update
     void Start()
     {
+        Colliders.SetActive(false);
         player = GameObject.Find("Player");
         inventoryTwo = player.GetComponent<InventoryTwo>();
         GameManagerObj = GameObject.Find("gameManager");
@@ -27,15 +31,18 @@ public class ApplyHygiene : MonoBehaviour
             inventoryTwo = player.GetComponent<InventoryTwo>();
         }
     }
-    public void washBody()
+    public void ApplyHygieneKit()
     {
-        StartCoroutine(washBodyy());
+        anim.SetBool("Apply", true);
+        Colliders.SetActive(true);
+        StartCoroutine(ApplyingKit());
 
     }
-    public IEnumerator washBodyy()
+    public IEnumerator ApplyingKit()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(20f);
         GameManager.objectiveArrayDayOne[5] = 1;
-        GameManager.changeObjText("Get The Hygine kit");
+        Colliders.SetActive(false);
+        GameManager.changeObjText("Pick up and Burn the Body");
     }
 }
