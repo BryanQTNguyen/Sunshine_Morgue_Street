@@ -31,6 +31,7 @@ public class Hygiene : MonoBehaviour
     }
     public void HygieneKit()
     {
+        inventoryTwo.kitEquipped = true;
         GameManager.objectiveArrayDayOne[4] = 1;
         GameManager.changeObjText("Apply The Hygine kit on the body");
         KitTable.SetActive(false);

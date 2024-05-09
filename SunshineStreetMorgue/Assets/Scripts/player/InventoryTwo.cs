@@ -17,8 +17,6 @@ public class InventoryTwo : MonoBehaviour
     public objectPickUp ObjectPickUp;
     
     
-    
-    
     [SerializeField] playVHS PlayVHS;
     [SerializeField] doorOpen DoorOpen;
     [SerializeField] GameObject managerObj;
@@ -27,11 +25,6 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] SceneController sceneController;
     [SerializeField] DialogueTrigger dialogueTrigger;
     [SerializeField] FadeScript fadeScript;
-
-
-
-
-
 
 
     [SerializeField] BodyCabinet bodyCabinet;
@@ -43,6 +36,7 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] BurnBody burnBody;
 
     public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
+    public bool kitEquipped;
     [SerializeField] GameObject DeadBody;
     [SerializeField] GameObject Kit;
 
@@ -50,6 +44,7 @@ public class InventoryTwo : MonoBehaviour
     void Start()
     {
         bodyEquipped = false;
+        kitEquipped = false;
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
         SceneManagerObj = GameObject.Find("SceneController");
@@ -152,9 +147,9 @@ public class InventoryTwo : MonoBehaviour
                         applyHygiene.ApplyHygieneKit();
                     }
                     //Burning the body
-                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(6, true) && GameManager.objectiveArrayDayOne[6] != 1)
+                    if (raycastHit.transform.TryGetComponent(out applyHygiene) && ObjectiveChecker(6, true) && GameManager.objectiveArrayDayOne[6] != 1)
                     {
-
+                        applyHygiene.PickUpBodyAfterHygiene();
                     }
                     if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayOne[7] != 1)
                     {
@@ -180,20 +175,21 @@ public class InventoryTwo : MonoBehaviour
             }
         }
 
-        if (bodyEquipped == true && GameManager.objectiveArrayDayOne[1] != 1 && SceneManager.GetActiveScene().name == "Morgue 1")
+        if (bodyEquipped == true)
         {
             DeadBody.SetActive(true);
         }
-        else if(SceneManager.GetActiveScene().name == "Morgue 1" || GameManager.objectiveArrayDayOne[1] == 1)
+        else if (bodyEquipped == false)
         {
             DeadBody.SetActive(false);
+            bodyEquipped = false;
         }
 
-        if (GameManager.objectiveArrayDayOne[4] == 1 && SceneManager.GetActiveScene().name == "Morgue 1")
+        if (kitEquipped == true)
         {
             Kit.SetActive(true);
         }
-        else if(SceneManager.GetActiveScene().name == "Morgue 1" || GameManager.objectiveArrayDayOne[4] == 1)
+        else if(kitEquipped == false)
         {
             Kit.SetActive(false);
         }
@@ -232,26 +228,6 @@ public class InventoryTwo : MonoBehaviour
                 return conditionMet; 
             }
             
-        }
-        if (SceneManager.GetActiveScene().name == "Morgue Half")
-        {
-            for (int i = 0; i < length; i++)
-            {
-                if (GameManager.objectiveArrayDayOneHalf[i] != 1)
-                {
-                    conditionMet = false;
-                    break;
-                }
-            }
-            if (conditionMet == true)
-            {
-                return conditionMet;
-            }
-            else
-            {
-                return conditionMet;
-            }
-
         }
         if (SceneManager.GetActiveScene().name == "Morgue 2")
         {
