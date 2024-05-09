@@ -31,20 +31,6 @@ public class gameManager : MonoBehaviour
     4 = Hydrate Skin/Hygiene
     5 = Burn Body
     */
-    public string[] objectiveDayOneText = new string[6];
-
-    public int[] objectiveArrayDayOneHalf = new int[6];
-    /*
-    0 = Get body
-    1 = Place Body Down
-    2 = Wash Hands
-    3 = Wash body
-    4 = Hydrate Skin/Hygiene
-    5 = Burn Body
-    */
-    public string[] objectiveDayOneHalfText = new string[6];
-
-
     public int[] objectiveArrayDayTwo = new int[9];
     /*
     0 = Get body
@@ -57,10 +43,6 @@ public class gameManager : MonoBehaviour
     7 = Hydrate Skin/Hygiene
     8 = Burn the body
     */
-
-    public string[] objectiveDayTwoText = new string[9];
-
-
     public int[] objectiveArrayDayThree = new int[3];
     /*
     0 = Get body
@@ -75,12 +57,8 @@ public class gameManager : MonoBehaviour
     private void Awake()
     {
         objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-        objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Wash your hands", "Wash the Body", "Get Hygiene Kit", "Apply the kit", "Pick Up The Body", "Burn the Body" };
         objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0 };
-        objectiveDayOneText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Strap it down", "Wash your hands", "Water Boa- Wash the body", "Saw Off Leg 1", "Saw off Leg 2",
-            "Apply finishing touches with Hygine kit", "Burn the Body" };
         objectiveArrayDayThree = new int[] { 0, 0, 0 };
-        objectiveDayThreeText = new string[] { "Get Body From Cabinet", "Place Body on Metal Bed", "Saw Off Head IMMEDIATELY" };
 
         if (Instance == null)
         {

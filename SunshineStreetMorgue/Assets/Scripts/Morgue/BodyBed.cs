@@ -31,6 +31,7 @@ public class BodyBed : MonoBehaviour
 
     public void bodyDown()
     {
+        inventoryTwo.bodyEquipped = false;
         anim.SetBool("BodyYes", true);
         GameManager.objectiveArrayDayOne[1] = 1;
         GameManager.changeObjText("Wash Your Hands");

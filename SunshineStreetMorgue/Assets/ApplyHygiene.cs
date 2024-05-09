@@ -10,6 +10,7 @@ public class ApplyHygiene : MonoBehaviour
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
     [SerializeField] Animator anim;
+    [SerializeField] Animator tableAnim;
     [SerializeField] GameObject Colliders;
 
     // Start is called before the first frame update
@@ -33,8 +34,10 @@ public class ApplyHygiene : MonoBehaviour
     }
     public void ApplyHygieneKit()
     {
+        Debug.Log("hfiosdjfdksjfdsklj");
         anim.SetBool("Apply", true);
         Colliders.SetActive(true);
+        inventoryTwo.kitEquipped = false; 
         StartCoroutine(ApplyingKit());
 
     }
@@ -44,5 +47,12 @@ public class ApplyHygiene : MonoBehaviour
         GameManager.objectiveArrayDayOne[5] = 1;
         Colliders.SetActive(false);
         GameManager.changeObjText("Pick up and Burn the Body");
+    }
+
+    public void PickUpBodyAfterHygiene()
+    {
+        inventoryTwo.bodyEquipped = true;
+        tableAnim.SetBool("BodyYes", false);
+        GameManager.objectiveArrayDayOne[6] = 1;
     }
 }
