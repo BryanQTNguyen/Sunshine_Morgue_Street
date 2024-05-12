@@ -17,6 +17,8 @@ public class gameManager : MonoBehaviour
     public bool taskStarted; // for morgue gameplay
     public bool taskFinished;
     public GameObject Character;
+
+    public GameObject canvas;
     public GameObject ObjectiveTextObj;
     public TMP_Text currentObjText;
 
@@ -98,7 +100,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ObjectiveTextObj != null)
+        if(ObjectiveTextObj == null)
         {
             defineText();
         }
@@ -166,7 +168,8 @@ public class gameManager : MonoBehaviour
 
     public void defineText()
     {
-        ObjectiveTextObj = GameObject.Find("CurrentObj");
+        canvas = GameObject.Find("Canvas");
+        ObjectiveTextObj = canvas.transform.GetChild(0).gameObject;
         currentObjText = ObjectiveTextObj.GetComponent<TMP_Text>();
     }
 

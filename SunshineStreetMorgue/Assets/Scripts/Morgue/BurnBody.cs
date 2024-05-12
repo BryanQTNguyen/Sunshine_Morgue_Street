@@ -49,7 +49,6 @@ public class BurnBody : MonoBehaviour
         GameManager.changeObjText("Go home");
         Colliders.SetActive(false);
         GameManager.objectiveArrayDayOne[7] = 1;
-        GameManager.
         GameManager.taskFinished = true;
     }
 }
