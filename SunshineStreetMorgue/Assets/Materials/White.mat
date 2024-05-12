@@ -14,8 +14,6 @@ Material:
   m_ValidKeywords:
   - _BRDF_MODE_LAMBERT
   - _FOG_ON
-  - _LIGHTING_BAKED_ON
-  - _LIGHTING_DYNAMIC_ON
   - _SHADING_EVALUATION_MODE_PER_VERTEX
   - _TEXTURE_FILTER_MODE_TEXTURE_IMPORT_SETTINGS
   m_InvalidKeywords: []
@@ -89,7 +87,7 @@ Material:
     - _LightingBaked: 1
     - _LightingDynamic: 1
     - _LightingEnabled: 1
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _Metallic: 0
     - _Mode: 0
     - _PrecisionColorOverrideMode: 0

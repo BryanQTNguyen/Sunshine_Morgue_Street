@@ -42,6 +42,6 @@ public class BodyCabinet : MonoBehaviour
         inventoryTwo.bodyEquipped = true;
         GameManager.objectiveArrayDayOne[0] = 1;
         Collider.SetActive(false);
-        GameManager.changeObjText("Place Body on Metal Bed");
+        GameManager.changeObjText("Now I place the body on the metal bed");
     }
 }

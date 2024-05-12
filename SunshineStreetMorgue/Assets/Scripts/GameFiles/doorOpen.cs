@@ -9,3 +9,4 @@ public class doorOpen : MonoBehaviour
     public string SceneTo;
     public bool MorgueToOut;
 }
+

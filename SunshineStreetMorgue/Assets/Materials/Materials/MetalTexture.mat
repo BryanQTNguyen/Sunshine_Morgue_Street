@@ -14,6 +14,8 @@ Material:
   m_ValidKeywords:
   - _BRDF_MODE_LAMBERT
   - _FOG_ON
+  - _LIGHTING_BAKED_ON
+  - _LIGHTING_DYNAMIC_ON
   - _SHADING_EVALUATION_MODE_PER_VERTEX
   - _TEXTURE_FILTER_MODE_TEXTURE_IMPORT_SETTINGS
   m_InvalidKeywords: []
@@ -58,10 +60,10 @@ Material:
     - _DrawDistanceOverrideMode: 0
     - _DstBlend: 0
     - _EmissionBakedMultiplier: 1
-    - _FogWeight: 0.967
+    - _FogWeight: 0.551
     - _LightingBaked: 1
     - _LightingDynamic: 1
-    - _LightingMode: 1
+    - _LightingMode: 0
     - _PrecisionColorOverrideMode: 0
     - _PrecisionGeometryOverrideMode: 0
     - _PrecisionGeometryWeight: 1

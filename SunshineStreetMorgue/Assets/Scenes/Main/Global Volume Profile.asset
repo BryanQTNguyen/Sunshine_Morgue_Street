@@ -40,7 +40,7 @@ MonoBehaviour:
     m_Value: 3
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+    m_Value: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   precisionAlpha:
     m_OverrideState: 1
     m_Value: 1
@@ -331,7 +331,7 @@ MonoBehaviour:
     m_Value: 1
   bloom:
     m_OverrideState: 1
-    m_Value: 0.363
+    m_Value: 1
   grateMaskMode:
     m_OverrideState: 1
     m_Value: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_Value: 0
   vignette:
     m_OverrideState: 1
-    m_Value: 0.291
+    m_Value: 0.253
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3

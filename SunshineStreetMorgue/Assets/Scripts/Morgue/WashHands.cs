@@ -41,6 +41,6 @@ public class WashHands : MonoBehaviour
         yield return new WaitForSeconds(5f);
         WaterFlow.SetActive(false);
         GameManager.objectiveArrayDayOne[2] = 1;
-        GameManager.changeObjText("Shower The Body");
+        GameManager.changeObjText("Now I can shower the body");
     }
 }

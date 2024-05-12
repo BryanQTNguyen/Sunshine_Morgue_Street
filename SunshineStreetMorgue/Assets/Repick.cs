@@ -3,18 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hygiene : MonoBehaviour
+public class Repick : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] InventoryTwo inventoryTwo;
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
-    [SerializeField] GameObject KitTable;
+    [SerializeField] Animator tableAnim;
+
     // Start is called before the first frame update
     void Start()
     {
-        KitTable.SetActive(true);
-        player = GameObject.Find("Player");
         inventoryTwo = player.GetComponent<InventoryTwo>();
         GameManagerObj = GameObject.Find("gameManager");
         GameManager = GameManagerObj.GetComponent<gameManager>();
@@ -29,11 +28,11 @@ public class Hygiene : MonoBehaviour
             inventoryTwo = player.GetComponent<InventoryTwo>();
         }
     }
-    public void HygieneKit()
+
+    public void PickUpBodyAfterHygiene()
     {
-        inventoryTwo.kitEquipped = true;
-        GameManager.objectiveArrayDayOne[4] = 1;
-        GameManager.changeObjText("Gotta Apply The Hygine kit");
-        KitTable.SetActive(false);
+        inventoryTwo.bodyEquipped = true;
+        tableAnim.SetBool("BodyYes", false);
+        GameManager.objectiveArrayDayOne[6] = 1;
     }
 }

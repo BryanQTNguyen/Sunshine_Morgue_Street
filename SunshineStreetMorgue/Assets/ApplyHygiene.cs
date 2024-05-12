@@ -34,7 +34,6 @@ public class ApplyHygiene : MonoBehaviour
     }
     public void ApplyHygieneKit()
     {
-        Debug.Log("hfiosdjfdksjfdsklj");
         anim.SetBool("Apply", true);
         Colliders.SetActive(true);
         inventoryTwo.kitEquipped = false; 
@@ -43,16 +42,9 @@ public class ApplyHygiene : MonoBehaviour
     }
     public IEnumerator ApplyingKit()
     {
-        yield return new WaitForSeconds(20f);
-        GameManager.objectiveArrayDayOne[5] = 1;
+        yield return new WaitForSeconds(19f);
         Colliders.SetActive(false);
-        GameManager.changeObjText("Pick up and Burn the Body");
-    }
-
-    public void PickUpBodyAfterHygiene()
-    {
-        inventoryTwo.bodyEquipped = true;
-        tableAnim.SetBool("BodyYes", false);
-        GameManager.objectiveArrayDayOne[6] = 1;
+        GameManager.changeObjText("Pick up and Burn the body and call it a day");
+        GameManager.objectiveArrayDayOne[5] = 1;
     }
 }

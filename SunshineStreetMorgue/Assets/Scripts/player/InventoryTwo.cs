@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,8 +16,7 @@ public class InventoryTwo : MonoBehaviour
     public string CurrentlyEquipped = null;
     public bool currentlyEquippedBool = false;
     public GameObject CurrentGameObject;
-    public objectPickUp ObjectPickUp;
-    
+    public objectPickUp ObjectPickUp;    
     
     [SerializeField] playVHS PlayVHS;
     [SerializeField] doorOpen DoorOpen;
@@ -33,6 +34,7 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] WashBody washBody;
     [SerializeField] Hygiene hygiene;
     [SerializeField] ApplyHygiene applyHygiene;
+    [SerializeField] Repick repick;
     [SerializeField] BurnBody burnBody;
 
     public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
@@ -40,15 +42,25 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] GameObject DeadBody;
     [SerializeField] GameObject Kit;
 
+
+
+    private bool dayOver;
+
+
+    string previousText;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        dayOver = false;
         bodyEquipped = false;
         kitEquipped = false;
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
         SceneManagerObj = GameObject.Find("SceneController");
         sceneController = SceneManagerObj.GetComponent<SceneController>();
+
     }
 
     // Update is called once per frame
@@ -81,22 +93,72 @@ public class InventoryTwo : MonoBehaviour
                 {
                     if(DoorOpen.SceneTo != "Outside")
                     {
-                        sceneController.searchScenes(DoorOpen.SceneTo);
-
-                    }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Morgue 1")
+                        if((DoorOpen.SceneTo == "Morgue 1" || DoorOpen.SceneTo == "Morgue 2"|| DoorOpen.SceneTo == "Morgue 3") && dayOver == true)
+                        {
+                            previousText = GameManager.currentObjText.text;
+                            GameManager.changeObjText("Day is done, I'm not going back");
+                            StartCoroutine(FinishWorkText());
+                        }
+                        else if (DoorOpen.SceneTo == "Apartment")
+                        {
+                            if (dayOver == true)
+                            {
+                                GameManager.defineText();
+                                GameManager.PrimaryObjective[2] = 1;
+                                GameManager.changeObjText("I better sleep");
+                                sceneController.searchScenes(DoorOpen.SceneTo);
+                            }
+                            else
+                            {
+                                previousText = GameManager.currentObjText.text;
+                                GameManager.changeObjText("Its getting late better get to work");
+                                StartCoroutine(FinishWorkText());
+                            }
+                        }
+                        else
+                        {
+                            sceneController.searchScenes(DoorOpen.SceneTo);
+                        }
+                    }
+                    else if(DoorOpen.SceneTo == "Outside" && (SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" ||
+                        SceneManager.GetActiveScene().name == "Morgue 3"))
                     {
-                        if(GameManager.taskStarted == false)
+                        if(GameManager.taskFinished == true)
                         {
                             sceneController.searchScenes("Outside");
                             GameManager.relocatePlayer();
                         }
                         else
                         {
-                            //tell them to finish the job first
+                            previousText = GameManager.currentObjText.text;
+                            GameManager.changeObjText("Gotta Finish Work First");
+                            StartCoroutine(FinishWorkText());
+                        }
+
+                    }
+                    else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Apartment"){
+                        sceneController.searchScenes("Outside");
+                        if (GameManager.PrimaryObjective[0] != 1)
+                        {
+                            GameManager.defineText();
+                            GameManager.PrimaryObjective[0] = 1;
+                            dayOver = false;
+                            GameManager.changeObjText("Get to work at the Morgue");
+                        }
+
+                    }
+                    else if (DoorOpen.SceneTo == "Outside" && (SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" ||
+                        SceneManager.GetActiveScene().name == "Morgue 3")) {
+                        if(GameManager.taskFinished == true && GameManager.PrimaryObjective[0] == 1)
+                        {
+                            dayOver = true;
+                            GameManager.defineText();
+                            GameManager.PrimaryObjective[1] = 1;
+                            GameManager.changeObjText("Get home");
+                            GameManager.taskFinished = false;
+                            GameManager.taskStarted = false;
                         }
                         
-                    }else if(DoorOpen.SceneTo == "Outside" && SceneManager.GetActiveScene().name == "Apartment"){
-                        sceneController.searchScenes("Outside");
                     }
 
                 }
@@ -146,14 +208,14 @@ public class InventoryTwo : MonoBehaviour
                     {
                         applyHygiene.ApplyHygieneKit();
                     }
-                    //Burning the body
-                    if (raycastHit.transform.TryGetComponent(out applyHygiene) && ObjectiveChecker(6, true) && GameManager.objectiveArrayDayOne[6] != 1)
+                    //Picking up the body
+                    if (raycastHit.transform.TryGetComponent(out repick) && ObjectiveChecker(6, true) == true && GameManager.objectiveArrayDayOne[6] != 1)
                     {
-                        applyHygiene.PickUpBodyAfterHygiene();
+                        repick.PickUpBodyAfterHygiene();
                     }
                     if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayOne[7] != 1)
                     {
-
+                        burnBody.BurningBody();
                     }
                 }
 
@@ -175,21 +237,21 @@ public class InventoryTwo : MonoBehaviour
             }
         }
 
-        if (bodyEquipped == true)
+        if (bodyEquipped == true && DeadBody != null)
         {
             DeadBody.SetActive(true);
         }
-        else if (bodyEquipped == false)
+        else if (bodyEquipped == false && DeadBody != null)
         {
             DeadBody.SetActive(false);
             bodyEquipped = false;
         }
 
-        if (kitEquipped == true)
+        if (kitEquipped == true && Kit != null)
         {
             Kit.SetActive(true);
         }
-        else if(kitEquipped == false)
+        else if(kitEquipped == false && Kit != null)
         {
             Kit.SetActive(false);
         }
@@ -216,6 +278,7 @@ public class InventoryTwo : MonoBehaviour
                     conditionMet = false;
                     print("Broke");
                     Debug.Log("BREAK");
+                    Debug.Log(GameManager.objectiveArrayDayOne);
                     break;
                 }
             }
@@ -275,6 +338,11 @@ public class InventoryTwo : MonoBehaviour
         }
 
 
+    }
+    public IEnumerator FinishWorkText()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.changeObjText(previousText);
     }
 }
 
