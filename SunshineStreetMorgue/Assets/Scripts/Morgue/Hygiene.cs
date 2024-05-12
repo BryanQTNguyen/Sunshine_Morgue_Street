@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hygiene : MonoBehaviour
 {
@@ -32,8 +33,19 @@ public class Hygiene : MonoBehaviour
     public void HygieneKit()
     {
         inventoryTwo.kitEquipped = true;
-        GameManager.objectiveArrayDayOne[4] = 1;
+        updateList();
         GameManager.changeObjText("Gotta Apply The Hygine kit");
         KitTable.SetActive(false);
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[4] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[4] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[4] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[4] = 1;
     }
 }

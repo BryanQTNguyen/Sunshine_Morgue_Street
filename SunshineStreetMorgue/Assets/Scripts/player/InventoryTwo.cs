@@ -36,6 +36,7 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] ApplyHygiene applyHygiene;
     [SerializeField] Repick repick;
     [SerializeField] BurnBody burnBody;
+    [SerializeField] bed Bed;
 
     public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
     public bool kitEquipped;
@@ -142,6 +143,7 @@ public class InventoryTwo : MonoBehaviour
                         else
                         {
                             previousText = GameManager.currentObjText.text;
+                            GameManager.pulse = true;
                             GameManager.changeObjText("Gotta Finish Work First");
                             StartCoroutine(FinishWorkText());
                         }
@@ -151,7 +153,6 @@ public class InventoryTwo : MonoBehaviour
                         sceneController.searchScenes("Outside");
                         if (GameManager.PrimaryObjective[0] != 1)
                         {
-                            Debug.Log("I AHTE JHYOYOIJ");
                             GameManager.defineText();
                             GameManager.PrimaryObjective[0] = 1;
                             GameManager.DayOver = false;
@@ -215,6 +216,65 @@ public class InventoryTwo : MonoBehaviour
                     if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayOne[7] != 1)
                     {
                         burnBody.BurningBody();
+                    }
+                }
+                if(SceneManager.GetActiveScene().name == "Morgue 2")
+                {
+
+                    //Taking the Body Out
+                    if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayTwo[0] != 1)
+                    {
+                        if (GameManager.objectiveArrayDayTwo[0] != 1)
+                        {
+                            bodyCabinet.BodyOut();
+                        }
+                    }
+                    //Placing the body down
+                    if (raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayTwo[1] != 1)
+                    {
+                        bodyBed.bodyDown();
+                    }
+                    //Wash Hands
+                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) == true && GameManager.objectiveArrayDayTwo[2] != 1)
+                    {
+                        washHands.washHands();
+                    }
+                    //Wash body
+                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) == true && GameManager.objectiveArrayDayTwo[3] != 1)
+                    {
+                        washBody.washBody();
+                    }
+                    //Hygiene kit
+                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) == true && GameManager.objectiveArrayDayTwo[4] != 1)
+                    {
+                        hygiene.HygieneKit();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out applyHygiene) && ObjectiveChecker(5, true) == true && GameManager.objectiveArrayDayTwo[5] != 1)
+                    {
+                        applyHygiene.ApplyHygieneKit();
+                    }
+                    //Picking up the body
+                    if (raycastHit.transform.TryGetComponent(out repick) && ObjectiveChecker(6, true) == true && GameManager.objectiveArrayDayTwo[6] != 1)
+                    {
+                        repick.PickUpBodyAfterHygiene();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayTwo[7] != 1)
+                    {
+                        burnBody.BurningBody();
+                    }
+                }
+                if (SceneManager.GetActiveScene().name == "Apartment")
+                {
+                    if (raycastHit.transform.TryGetComponent(out Bed) && GameManager.DayOver == true)
+                    {
+                        Bed.Sleep();
+                    }
+                    else if (raycastHit.transform.TryGetComponent(out Bed) && GameManager.DayOver == false)
+                    {
+                        previousText = GameManager.currentObjText.text;
+                        GameManager.pulse = true;
+                        GameManager.changeObjText("Can't sleep anymore, time for work");
+                        StartCoroutine(FinishWorkText());
                     }
                 }
 
@@ -341,6 +401,7 @@ public class InventoryTwo : MonoBehaviour
     public IEnumerator FinishWorkText()
     {
         yield return new WaitForSeconds(2f);
+        GameManager.pulse = false;
         GameManager.changeObjText(previousText);
     }
 }

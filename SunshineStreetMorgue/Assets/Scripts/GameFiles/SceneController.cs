@@ -58,12 +58,50 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
+            if (searched == "Morgue 2")
+            {
+                Morgue2();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
+            if (searched == "Morgue 3")
+            {
+                Morgue3();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
             if (searched == "MainMenu")
             {
                 MainMenu();
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
+            if (searched == "Day One")
+            {
+                Day1();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
+            if (searched == "Day Two")
+            {
+                Day2();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
+            if (searched == "Day Three")
+            {
+                Day3();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
+            if (searched == "EndGame")
+            {
+                EndGame();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
+
+
 
         }
         else if (SceneCoolDown == false)
@@ -92,6 +130,37 @@ public class SceneController : MonoBehaviour
         sceneID = 3;
         StartCoroutine(LoadScene());
     }
+    public void Morgue2()
+    {
+        sceneID = 4;
+        StartCoroutine(LoadScene());
+    }
+    public void Morgue3()
+    {
+        sceneID = 5;
+        StartCoroutine(LoadScene());
+    }
+    public void Day1()
+    {
+        sceneID = 6;
+        StartCoroutine(LoadScene());
+    }
+    public void Day2()
+    {
+        sceneID = 7;
+        StartCoroutine(LoadScene());
+    }
+    public void Day3()
+    {
+        sceneID = 8;
+        StartCoroutine(LoadScene());
+    }
+    public void EndGame()
+    {
+        sceneID = 9;
+        StartCoroutine(LoadScene());
+    }
+
 
 
     public void quitGame()

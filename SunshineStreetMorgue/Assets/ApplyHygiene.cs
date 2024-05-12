@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ApplyHygiene : MonoBehaviour
 {
@@ -45,6 +46,17 @@ public class ApplyHygiene : MonoBehaviour
         yield return new WaitForSeconds(19f);
         Colliders.SetActive(false);
         GameManager.changeObjText("Pick up and Burn the body and call it a day");
-        GameManager.objectiveArrayDayOne[5] = 1;
+        updateList();
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[5] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[5] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[5] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[5] = 1;
     }
 }

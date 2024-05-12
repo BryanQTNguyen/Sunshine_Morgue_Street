@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WashBody : MonoBehaviour
 {
@@ -43,7 +44,18 @@ public class WashBody : MonoBehaviour
         yield return new WaitForSeconds(8f);
         WaterFlow.SetActive(false);
         Colliders.SetActive(false);
-        GameManager.objectiveArrayDayOne[3] = 1;
+        updateList();
         GameManager.changeObjText("Get The Hygine kit");
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[3] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[3] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[3] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[3] = 1;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BodyBed : MonoBehaviour
 {
@@ -33,7 +34,18 @@ public class BodyBed : MonoBehaviour
     {
         inventoryTwo.bodyEquipped = false;
         anim.SetBool("BodyYes", true);
-        GameManager.objectiveArrayDayOne[1] = 1;
+        updateList();
         GameManager.changeObjText("Got to wash my hands first");
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[1] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[1] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[1] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[1] = 1;
     }
 }

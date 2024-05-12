@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BodyCabinet : MonoBehaviour
 {
@@ -40,8 +41,19 @@ public class BodyCabinet : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         inventoryTwo.bodyEquipped = true;
-        GameManager.objectiveArrayDayOne[0] = 1;
+        updateList();
         Collider.SetActive(false);
         GameManager.changeObjText("Now I place the body on the metal bed");
+    }
+    public void updateList()
+    {
+        if(SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[0] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[0] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[0] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[0] = 1;
     }
 }

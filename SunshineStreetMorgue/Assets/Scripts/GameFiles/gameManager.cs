@@ -39,7 +39,7 @@ public class gameManager : MonoBehaviour
     4 = Hydrate Skin/Hygiene
     5 = Burn Body
     */
-    public int[] objectiveArrayDayTwo = new int[9];
+    public int[] objectiveArrayDayTwo = new int[8];
     /*
     0 = Get body
     1 = Place Body Down
@@ -57,6 +57,7 @@ public class gameManager : MonoBehaviour
     1 = Place Body Down
     2 = Saw Off Head
     */
+    public int[] objectiveArrayDayFour = new int[3];
 
     public int[] PrimaryObjective = new int[4];
     /* 
@@ -68,6 +69,7 @@ public class gameManager : MonoBehaviour
      */
     public int DayNumber = 1;
     public bool DayOver;
+    public bool pulse = false;
 
 
     private bool needToRelocate = false;
@@ -76,8 +78,10 @@ public class gameManager : MonoBehaviour
     {
         taskFinished = false;
         objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-        objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0 };
+        objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
         objectiveArrayDayThree = new int[] { 0, 0, 0 };
+        objectiveArrayDayFour = new int[] { 0, 0, 0 };
+
         PrimaryObjective = new int[] { 0, 0, 0, 0 };
 
         if (Instance == null)
@@ -101,9 +105,8 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3")
+        if((SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3") && pulse == false)
         {
-            Debug.Log("fdjklsfjds"); 
             if (PrimaryObjective[0] == 0)
                 changeObjText("Get out the apartment");
             if (PrimaryObjective[0] == 1)
@@ -138,6 +141,12 @@ public class gameManager : MonoBehaviour
             Character.transform.position = new Vector3(116.68f, 0.31f, 101.34f);
             needToRelocate = false;
         }
+        if(needToRelocate == true && SceneManager.GetActiveScene().name == "Apartment")
+        {
+            Character = GameObject.FindWithTag("Player");
+            Character.transform.position = new Vector3(-0.848f, 0.82361f, -1.69f);
+            needToRelocate = false;
+        }
 
         //Day One Morgue Helps For applying hygiene
         if (SceneManager.GetActiveScene().name == "Morgue 1")
@@ -157,6 +166,33 @@ public class gameManager : MonoBehaviour
                 Repick.SetActive(false);
             }
             else if (objectiveArrayDayOne[5] == 1)
+            {
+                Repick.SetActive(true);
+                ApplyHygiene.SetActive(false);
+            }
+            else
+            {
+                Repick.SetActive(false);
+                ApplyHygiene.SetActive(false);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+        {
+            if (ApplyHygiene == null || Repick == null)
+            {
+                ApplyHygiene = GameObject.Find("ApplyHygiene");
+                Repick = GameObject.Find("Repick");
+
+            }
+            if (Repick == null)
+                ApplyHygiene = GameObject.Find("Repick");
+
+            if (objectiveArrayDayTwo[4] == 1 && objectiveArrayDayTwo[5] != 1)
+            {
+                ApplyHygiene.SetActive(true);
+                Repick.SetActive(false);
+            }
+            else if (objectiveArrayDayTwo[5] == 1)
             {
                 Repick.SetActive(true);
                 ApplyHygiene.SetActive(false);

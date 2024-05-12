@@ -131,6 +131,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: sfxSource
+      value: 
+      objectReference: {fileID: 229468047}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: rainSource
+      value: 
+      objectReference: {fileID: 229468045}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 229468044}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: ApartAmbient
+      value: 
+      objectReference: {fileID: 8300000, guid: 430de7e1b91e30c4cae74df09e82c932, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: MorgueAmbient
+      value: 
+      objectReference: {fileID: 8300000, guid: f78b5cd25c678a84db081def3c08976c, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: MorgueAmbient2
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ff88dad85c86a24abc8cab13367cced, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: MorgueAmbient3
+      value: 
+      objectReference: {fileID: 8300000, guid: bd5175ec15835b2498af66736f7987b4, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: dialogueSource
+      value: 
+      objectReference: {fileID: 229468046}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f78b5cd25c678a84db081def3c08976c, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[1].name
+      value: MorgueAmbient
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ff88dad85c86a24abc8cab13367cced, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[2].name
+      value: MorgueAmbient2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd5175ec15835b2498af66736f7987b4, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: musicSounds.Array.data[3].name
+      value: MorgueAmbient3
+      objectReference: {fileID: 0}
     - target: {fileID: 6891111007778314666, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
       propertyPath: m_Name
       value: AudManager
@@ -180,6 +244,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+--- !u!82 &229468044 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8742467909236428053, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+  m_PrefabInstance: {fileID: 229468043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &229468045 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2084306601478274812, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+  m_PrefabInstance: {fileID: 229468043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &229468046 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4710384635476912110, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+  m_PrefabInstance: {fileID: 229468043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &229468047 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8099652222541696575, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+  m_PrefabInstance: {fileID: 229468043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357810770
 GameObject:
   m_ObjectHideFlags: 0
@@ -5763,7 +5847,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 947248458}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: Apartment
+        m_MethodName: Day1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6175,8 +6259,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1983120929}
-  - {fileID: 1184365802}
   - {fileID: 1874280378}
+  - {fileID: 1184365802}
   - {fileID: 2904571587183306901}
   - {fileID: 1694314535}
   - {fileID: 1202330797}

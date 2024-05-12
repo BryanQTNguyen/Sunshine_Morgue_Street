@@ -15,6 +15,12 @@ public class AudManager : MonoBehaviour
 
     //[SerializeField] DialgoueManager dialogueManager;
     [SerializeField] GameObject dialogueObject;
+    [SerializeField] AudioSource audioSource;
+
+    public AudioClip MorgueAmbient2;
+    public AudioClip MorgueAmbient;
+    public AudioClip MorgueAmbient3;
+    public AudioClip ApartAmbient;
 
     private void Awake()
     {
@@ -43,14 +49,39 @@ public class AudManager : MonoBehaviour
             PlayRain("RainOutside");
             musicType = 1;
         }
+        if((SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2") && 
+            audioSource.clip != MorgueAmbient)
+        {
+            PlayMusic("MorgueAmbient");
+            rainSource.volume = 0;
+        }
+        if ((SceneManager.GetActiveScene().name == "Morgue 3") &&
+    audioSource.clip != MorgueAmbient2)
+        {
+            PlayMusic("MorgueAmbient2");
+            rainSource.volume = 0;
+        }
+        if ((SceneManager.GetActiveScene().name == "Morgue 4") &&
+audioSource.clip != MorgueAmbient3)
+        {
+            PlayMusic("MorgueAmbient3");
+            rainSource.volume = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Outside" && audioSource.clip != ApartAmbient)
+        {
+            PlayMusic("ApartAmbient");
+            PlayRain("RainOutside");
+            rainSource.volume = 1;
+        }
+        if(SceneManager.GetActiveScene().name == "Outside" && rainSource.volume != 1)
+        {
+            rainSource.volume = 1;
+        }
         if (SceneManager.GetActiveScene().name != "Outside" && rainSource.volume == 1)
         {
             rainSource.volume = 0;
         }
-        if (SceneManager.GetActiveScene().name == "Outside" && rainSource.volume == 0)
-        {
-            rainSource.volume = 1;
-        }
+
 
 
 

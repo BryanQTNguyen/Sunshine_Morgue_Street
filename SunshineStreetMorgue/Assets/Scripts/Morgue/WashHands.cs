@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WashHands : MonoBehaviour
 {
@@ -40,7 +41,18 @@ public class WashHands : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         WaterFlow.SetActive(false);
-        GameManager.objectiveArrayDayOne[2] = 1;
+        updateList();
         GameManager.changeObjText("Now I can shower the body");
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[2] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[2] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[2] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[2] = 1;
     }
 }

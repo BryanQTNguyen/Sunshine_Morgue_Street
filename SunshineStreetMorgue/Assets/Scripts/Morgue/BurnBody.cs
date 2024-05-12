@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BurnBody : MonoBehaviour
 {
@@ -48,7 +49,18 @@ public class BurnBody : MonoBehaviour
         yield return new WaitForSeconds(8f);
         GameManager.changeObjText("Go home");
         Colliders.SetActive(false);
-        GameManager.objectiveArrayDayOne[7] = 1;
+        updateList();
         GameManager.taskFinished = true;
+    }
+    public void updateList()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[7] = 1;
     }
 }
