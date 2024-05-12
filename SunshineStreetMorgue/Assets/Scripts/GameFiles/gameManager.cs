@@ -67,6 +67,7 @@ public class gameManager : MonoBehaviour
      Then this should reset to the next day
      */
     public int DayNumber = 1;
+    public bool DayOver;
 
 
     private bool needToRelocate = false;
@@ -100,13 +101,26 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ObjectiveTextObj == null)
+        if(SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3")
+        {
+            Debug.Log("fdjklsfjds"); 
+            if (PrimaryObjective[0] == 0)
+                changeObjText("Get out the apartment");
+            if (PrimaryObjective[0] == 1)
+                changeObjText("Get to work at the Morgue");
+            if (PrimaryObjective[1] == 1)
+                changeObjText("I need to get home");
+            if (PrimaryObjective[2] == 1)
+                changeObjText("I better sleep");
+        }
+
+        if (ObjectiveTextObj == null)
         {
             defineText();
         }
 
         //finds the SceneController
-        if (sceneController != null)
+        if (sceneController == null)
         {
             SceneManagerObj = GameObject.Find("SceneController");
             sceneController = SceneManagerObj.GetComponent<SceneController>();
@@ -158,6 +172,7 @@ public class gameManager : MonoBehaviour
 
     public void changeObjText(string text)
     {
+        defineText();
         currentObjText.text = text;
     }
 

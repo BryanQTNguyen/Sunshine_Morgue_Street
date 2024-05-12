@@ -53,10 +53,10 @@ MonoBehaviour:
     m_Value: 1
   distanceMin:
     m_OverrideState: 1
-    m_Value: 3.78
+    m_Value: 3.25
   distanceMax:
     m_OverrideState: 1
-    m_Value: 7.66
+    m_Value: 9.9
   fogFalloffCurve:
     m_OverrideState: 1
     m_Value: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
     m_Value: 100
   fogFalloffCurveLayer1:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.02
   heightFalloffEnabledLayer1:
     m_OverrideState: 1
     m_Value: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_Value: 0
   vignette:
     m_OverrideState: 1
-    m_Value: 0.253
+    m_Value: 1
 --- !u!114 &5154092813878774630
 MonoBehaviour:
   m_ObjectHideFlags: 3

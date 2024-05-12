@@ -1150,7 +1150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1970452
+      value: 1.2676709
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalScale.y
@@ -1162,7 +1162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1170,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.414
+      value: 2.457
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c7cdff89030ea34f9bb92c0dab3dc2d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9811,8 +9811,12 @@ PrefabInstance:
       value: SceneTransitionDoor
       objectReference: {fileID: 0}
     - target: {fileID: 6882556410062839482, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3173482
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882556410062839482, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.554
+      value: 2.613
       objectReference: {fileID: 0}
     - target: {fileID: 6882556410062839482, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
       propertyPath: m_LocalPosition.y

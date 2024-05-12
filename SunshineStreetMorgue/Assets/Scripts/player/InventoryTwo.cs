@@ -44,7 +44,6 @@ public class InventoryTwo : MonoBehaviour
 
 
 
-    private bool dayOver;
 
 
     string previousText;
@@ -53,11 +52,11 @@ public class InventoryTwo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dayOver = false;
-        bodyEquipped = false;
-        kitEquipped = false;
         managerObj = GameObject.Find("gameManager");
         GameManager = managerObj.GetComponent<gameManager>();
+        bodyEquipped = false;
+        kitEquipped = false;
+
         SceneManagerObj = GameObject.Find("SceneController");
         sceneController = SceneManagerObj.GetComponent<SceneController>();
 
@@ -66,6 +65,11 @@ public class InventoryTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager == null)
+        {
+            managerObj = GameObject.Find("gameManager");
+            GameManager = managerObj.GetComponent<gameManager>();
+        }
         if (Input.GetKeyDown(KeyCode.E) && GameManager.VHSVideoPlaying == false)
         {
             float pickUpdistance = 1.4f;
@@ -93,7 +97,7 @@ public class InventoryTwo : MonoBehaviour
                 {
                     if(DoorOpen.SceneTo != "Outside")
                     {
-                        if((DoorOpen.SceneTo == "Morgue 1" || DoorOpen.SceneTo == "Morgue 2"|| DoorOpen.SceneTo == "Morgue 3") && dayOver == true)
+                        if((DoorOpen.SceneTo == "Morgue 1" || DoorOpen.SceneTo == "Morgue 2"|| DoorOpen.SceneTo == "Morgue 3") && GameManager.DayOver == true)
                         {
                             previousText = GameManager.currentObjText.text;
                             GameManager.changeObjText("Day is done, I'm not going back");
@@ -101,7 +105,7 @@ public class InventoryTwo : MonoBehaviour
                         }
                         else if (DoorOpen.SceneTo == "Apartment")
                         {
-                            if (dayOver == true)
+                            if (GameManager.DayOver == true)
                             {
                                 GameManager.defineText();
                                 GameManager.PrimaryObjective[2] = 1;
@@ -123,10 +127,17 @@ public class InventoryTwo : MonoBehaviour
                     else if(DoorOpen.SceneTo == "Outside" && (SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" ||
                         SceneManager.GetActiveScene().name == "Morgue 3"))
                     {
-                        if(GameManager.taskFinished == true)
+                        if (GameManager.taskFinished == true || GameManager.objectiveArrayDayOne[7] == 1)
                         {
+                            GameManager.DayOver = true;
                             sceneController.searchScenes("Outside");
                             GameManager.relocatePlayer();
+                            GameManager.defineText();
+                            GameManager.PrimaryObjective[1] = 1;
+                            GameManager.changeObjText("I need to get home");
+                            GameManager.taskFinished = false;
+                            GameManager.taskStarted = false;
+
                         }
                         else
                         {
@@ -140,25 +151,13 @@ public class InventoryTwo : MonoBehaviour
                         sceneController.searchScenes("Outside");
                         if (GameManager.PrimaryObjective[0] != 1)
                         {
+                            Debug.Log("I AHTE JHYOYOIJ");
                             GameManager.defineText();
                             GameManager.PrimaryObjective[0] = 1;
-                            dayOver = false;
+                            GameManager.DayOver = false;
                             GameManager.changeObjText("Get to work at the Morgue");
                         }
 
-                    }
-                    else if (DoorOpen.SceneTo == "Outside" && (SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" ||
-                        SceneManager.GetActiveScene().name == "Morgue 3")) {
-                        if(GameManager.taskFinished == true && GameManager.PrimaryObjective[0] == 1)
-                        {
-                            dayOver = true;
-                            GameManager.defineText();
-                            GameManager.PrimaryObjective[1] = 1;
-                            GameManager.changeObjText("Get home");
-                            GameManager.taskFinished = false;
-                            GameManager.taskStarted = false;
-                        }
-                        
                     }
 
                 }
