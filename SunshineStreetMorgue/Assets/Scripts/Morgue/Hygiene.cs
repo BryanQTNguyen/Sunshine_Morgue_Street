@@ -34,7 +34,13 @@ public class Hygiene : MonoBehaviour
     {
         inventoryTwo.kitEquipped = true;
         updateList();
-        GameManager.changeObjText("Gotta Apply The Hygine kit");
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.changeObjText("Saw off the right leg now!");
+        else if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.changeObjText("Finish the job");
+        else
+            GameManager.changeObjText("Gotta Apply The Hygine kit");
+
         KitTable.SetActive(false);
     }
     public void updateList()

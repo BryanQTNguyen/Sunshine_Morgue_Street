@@ -44,6 +44,8 @@ public class SceneController : MonoBehaviour
             {
                 Apartment();
                 SceneCoolDown = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 StartCoroutine(SceneCool());
             }
             if (searched == "Outside")
@@ -70,10 +72,18 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
+            if (searched == "Morgue 4")
+            {
+                Morgue4();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
             if (searched == "MainMenu")
             {
                 MainMenu();
                 SceneCoolDown = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 StartCoroutine(SceneCool());
             }
             if (searched == "Day One")
@@ -94,10 +104,18 @@ public class SceneController : MonoBehaviour
                 SceneCoolDown = false;
                 StartCoroutine(SceneCool());
             }
+            if (searched == "Day Four")
+            {
+                Day4();
+                SceneCoolDown = false;
+                StartCoroutine(SceneCool());
+            }
             if (searched == "EndGame")
             {
                 EndGame();
                 SceneCoolDown = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 StartCoroutine(SceneCool());
             }
 
@@ -140,24 +158,34 @@ public class SceneController : MonoBehaviour
         sceneID = 5;
         StartCoroutine(LoadScene());
     }
-    public void Day1()
+    public void Morgue4()
     {
         sceneID = 6;
         StartCoroutine(LoadScene());
     }
-    public void Day2()
+    public void Day1()
     {
         sceneID = 7;
         StartCoroutine(LoadScene());
     }
-    public void Day3()
+    public void Day2()
     {
         sceneID = 8;
         StartCoroutine(LoadScene());
     }
-    public void EndGame()
+    public void Day3()
     {
         sceneID = 9;
+        StartCoroutine(LoadScene());
+    }
+    public void Day4()
+    {
+        sceneID = 10;
+        StartCoroutine(LoadScene());
+    }
+    public void EndGame()
+    {
+        sceneID = 11;
         StartCoroutine(LoadScene());
     }
 

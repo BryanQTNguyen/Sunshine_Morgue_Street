@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Morgue 3.unity
     guid: 9c44476cc44a8a14aa4e357444fa3be7
   - enabled: 1
+    path: Assets/Scenes/Morgue 4.unity
+    guid: e6eaf3441135b204192b2da1dde9d1b3
+  - enabled: 1
     path: Assets/Scenes/DayOne.unity
     guid: 35ed1518d073c6d4580f943d036a13e4
   - enabled: 1
@@ -32,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DayThree.unity
     guid: f484269ebe235414aa77737058168b6c
+  - enabled: 1
+    path: Assets/Scenes/DayFour.unity
+    guid: e21c53f1ac1e51547bec65b5aa8371b0
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: 81942a74dc6b36444a63ad119d9b4d93

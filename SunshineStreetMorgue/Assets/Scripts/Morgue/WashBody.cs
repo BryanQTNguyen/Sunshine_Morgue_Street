@@ -45,7 +45,13 @@ public class WashBody : MonoBehaviour
         WaterFlow.SetActive(false);
         Colliders.SetActive(false);
         updateList();
-        GameManager.changeObjText("Get The Hygine kit");
+        if(SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.changeObjText("Get the Hand Saw");
+        else if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.changeObjText("Where is the saw??? I have to find it!");
+        else
+            GameManager.changeObjText("Get The Hygine kit");
+
     }
     public void updateList()
     {

@@ -13,6 +13,10 @@ public class BodyBed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(SceneManager.GetActiveScene().name == "Morgue 3")
+        {
+            anim.SetBool("BodyNo3", true);
+        }
         player = GameObject.Find("Player");
         inventoryTwo = player.GetComponent<InventoryTwo>();
         GameManagerObj = GameObject.Find("gameManager");
@@ -33,7 +37,14 @@ public class BodyBed : MonoBehaviour
     public void bodyDown()
     {
         inventoryTwo.bodyEquipped = false;
-        anim.SetBool("BodyYes", true);
+        if(SceneManager.GetActiveScene().name == "Morgue 3")
+        {
+            anim.SetBool("BodyYes3", true);
+        }
+        else
+        {
+            anim.SetBool("BodyYes", true);
+        }
         updateList();
         GameManager.changeObjText("Got to wash my hands first");
     }

@@ -5427,7 +5427,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 947248458}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: Apartment
+        m_MethodName: quitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5763,7 +5763,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 947248458}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: Apartment
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6176,10 +6176,10 @@ RectTransform:
   m_Children:
   - {fileID: 1983120929}
   - {fileID: 1874280378}
+  - {fileID: 1184365802}
+  - {fileID: 2904571587183306901}
   - {fileID: 1694314535}
   - {fileID: 1202330797}
-  - {fileID: 2904571587183306901}
-  - {fileID: 1184365802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

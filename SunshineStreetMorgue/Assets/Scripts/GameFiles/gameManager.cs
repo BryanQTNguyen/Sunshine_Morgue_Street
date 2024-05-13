@@ -23,7 +23,7 @@ public class gameManager : MonoBehaviour
     public TMP_Text currentObjText;
 
 
-
+    public bool death;
 
 
     //Day one helping
@@ -51,13 +51,18 @@ public class gameManager : MonoBehaviour
     7 = Hydrate Skin/Hygiene
     8 = Burn the body
     */
-    public int[] objectiveArrayDayThree = new int[3];
+    public int[] objectiveArrayDayThree = new int[9];
     /*
     0 = Get body
     1 = Place Body Down
-    2 = Saw Off Head
+    3 = Wash Hands
+    4 = Water Body
+    5 = Saw Off Leg 1
+    6 = Saw Off Leg 2
+    7 = Pick up body
+    8 = burn body
     */
-    public int[] objectiveArrayDayFour = new int[3];
+    public int[] objectiveArrayDayFour = new int[5];
 
     public int[] PrimaryObjective = new int[4];
     /* 
@@ -79,8 +84,8 @@ public class gameManager : MonoBehaviour
         taskFinished = false;
         objectiveArrayDayOne = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
         objectiveArrayDayTwo = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-        objectiveArrayDayThree = new int[] { 0, 0, 0 };
-        objectiveArrayDayFour = new int[] { 0, 0, 0 };
+        objectiveArrayDayThree = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        objectiveArrayDayFour = new int[] { 0, 0, 0, 0, 0 };
 
         PrimaryObjective = new int[] { 0, 0, 0, 0 };
 
@@ -105,7 +110,11 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3") && pulse == false)
+        if(death == true)
+        {
+            Destroy(gameObject);
+        }
+        if ((SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3" && SceneManager.GetActiveScene().name != "Morgue 4") && pulse == false && death == false)
         {
             if (PrimaryObjective[0] == 0)
                 changeObjText("Get out the apartment");
@@ -128,7 +137,7 @@ public class gameManager : MonoBehaviour
             SceneManagerObj = GameObject.Find("SceneController");
             sceneController = SceneManagerObj.GetComponent<SceneController>();
         }
-        if((SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" || SceneManager.GetActiveScene().name == "Morgue 3")
+        if((SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" || SceneManager.GetActiveScene().name == "Morgue 3" || SceneManager.GetActiveScene().name == "Morgue 4")
             && taskFinished == false)
         {
             taskStarted = true;
@@ -201,6 +210,32 @@ public class gameManager : MonoBehaviour
             {
                 Repick.SetActive(false);
                 ApplyHygiene.SetActive(false);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+        {
+            if (ApplyHygiene == null || Repick == null)
+            {
+                ApplyHygiene = GameObject.Find("ApplyHygiene");
+                Repick = GameObject.Find("Repick");
+            }
+            if (Repick == null)
+                ApplyHygiene = GameObject.Find("Repick");
+
+            if (objectiveArrayDayThree[4] == 0)
+            {
+                Repick.SetActive(false);
+                ApplyHygiene.SetActive(false);
+            }
+
+            if (objectiveArrayDayThree[4] == 1 && objectiveArrayDayThree[6] != 1)
+            {
+                ApplyHygiene.SetActive(true);
+                Repick.SetActive(false);
+            } 
+            if (objectiveArrayDayThree[6] == 1)
+            {
+                Repick.SetActive(true);
             }
         }
     }

@@ -11,6 +11,7 @@ public class Repick : MonoBehaviour
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
     [SerializeField] Animator tableAnim;
+    [SerializeField] GameObject ApplyHygiene;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,16 @@ public class Repick : MonoBehaviour
     {
         inventoryTwo.bodyEquipped = true;
         tableAnim.SetBool("BodyYes", false);
-        updateList();
+        if(SceneManager.GetActiveScene().name =="Morgue 3")
+        {
+            ApplyHygiene = GameObject.Find("ApplyHygiene");
+            ApplyHygiene.SetActive(false);
+            updateList2();
+        }
+        else
+        {
+            updateList();
+        }
     }
     public void updateList()
     {
@@ -46,5 +56,16 @@ public class Repick : MonoBehaviour
             GameManager.objectiveArrayDayThree[6] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 4")
             GameManager.objectiveArrayDayFour[6] = 1;
+    }
+    public void updateList2()
+    {
+        if (SceneManager.GetActiveScene().name == "Morgue 1")
+            GameManager.objectiveArrayDayOne[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 2")
+            GameManager.objectiveArrayDayTwo[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 3")
+            GameManager.objectiveArrayDayThree[7] = 1;
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+            GameManager.objectiveArrayDayFour[7] = 1;
     }
 }

@@ -12291,7 +12291,7 @@ GameObject:
   - component: {fileID: 606813912}
   m_Layer: 0
   m_Name: EntranceToMorgue
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17699,6 +17699,10 @@ PrefabInstance:
     - target: {fileID: 247617150390443072, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
       propertyPath: m_Name
       value: SceneTransitionDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 247617150390443072, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 1982272489563669379, guid: 0473f1bb3c5a7764281c6a2479680c53, type: 3}
       propertyPath: SceneTo

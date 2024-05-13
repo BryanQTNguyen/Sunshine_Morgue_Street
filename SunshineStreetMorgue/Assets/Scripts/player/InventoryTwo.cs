@@ -38,6 +38,8 @@ public class InventoryTwo : MonoBehaviour
     [SerializeField] BurnBody burnBody;
     [SerializeField] bed Bed;
 
+    [SerializeField] sawLegs SawLegs;
+
     public bool bodyEquipped; // This variable will control when the body equip will appear. This boolean will be used in BodyCabinet script
     public bool kitEquipped;
     [SerializeField] GameObject DeadBody;
@@ -66,10 +68,11 @@ public class InventoryTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager == null)
+        if(GameManager == null )
         {
             managerObj = GameObject.Find("gameManager");
-            GameManager = managerObj.GetComponent<gameManager>();
+            if(managerObj != null)
+                GameManager = managerObj.GetComponent<gameManager>();
         }
         if (Input.GetKeyDown(KeyCode.E) && GameManager.VHSVideoPlaying == false)
         {
@@ -98,7 +101,7 @@ public class InventoryTwo : MonoBehaviour
                 {
                     if(DoorOpen.SceneTo != "Outside")
                     {
-                        if((DoorOpen.SceneTo == "Morgue 1" || DoorOpen.SceneTo == "Morgue 2"|| DoorOpen.SceneTo == "Morgue 3") && GameManager.DayOver == true)
+                        if((DoorOpen.SceneTo == "Morgue 1" || DoorOpen.SceneTo == "Morgue 2"|| DoorOpen.SceneTo == "Morgue 3" || DoorOpen.SceneTo == "Morgue 4") && GameManager.DayOver == true)
                         {
                             previousText = GameManager.currentObjText.text;
                             GameManager.changeObjText("Day is done, I'm not going back");
@@ -116,6 +119,7 @@ public class InventoryTwo : MonoBehaviour
                             else
                             {
                                 previousText = GameManager.currentObjText.text;
+                                GameManager.pulse = true;
                                 GameManager.changeObjText("Its getting late better get to work");
                                 StartCoroutine(FinishWorkText());
                             }
@@ -126,7 +130,7 @@ public class InventoryTwo : MonoBehaviour
                         }
                     }
                     else if(DoorOpen.SceneTo == "Outside" && (SceneManager.GetActiveScene().name == "Morgue 1" || SceneManager.GetActiveScene().name == "Morgue 2" ||
-                        SceneManager.GetActiveScene().name == "Morgue 3"))
+                        SceneManager.GetActiveScene().name == "Morgue 3" || SceneManager.GetActiveScene().name == "Morgue 4"))
                     {
                         if (GameManager.taskFinished == true || GameManager.objectiveArrayDayOne[7] == 1)
                         {
@@ -263,6 +267,87 @@ public class InventoryTwo : MonoBehaviour
                         burnBody.BurningBody();
                     }
                 }
+                if (SceneManager.GetActiveScene().name == "Morgue 3")
+                {
+
+                    //Taking the Body Out
+                    if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayThree[0] != 1)
+                    {
+                        if (GameManager.objectiveArrayDayThree[0] != 1)
+                        {
+                            bodyCabinet.BodyOut();
+                        }
+                    }
+                    //Placing the body down
+                    if (raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayThree[1] != 1)
+                    {
+                        bodyBed.bodyDown();
+                    }
+                    //Wash Hands
+                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) == true && GameManager.objectiveArrayDayThree[2] != 1)
+                    {
+                        washHands.washHands();
+                    }
+                    //Wash body
+                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) == true && GameManager.objectiveArrayDayThree[3] != 1)
+                    {
+                        washBody.washBody();
+                    }
+                    //Hygiene kit
+                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) == true && GameManager.objectiveArrayDayThree[4] != 1)
+                    {
+                        hygiene.HygieneKit();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out SawLegs) && ObjectiveChecker(5, true) == true && GameManager.objectiveArrayDayThree[5] != 1)
+                    {
+                        SawLegs.sawOffLegRight();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out SawLegs) && ObjectiveChecker(6, true) == true && GameManager.objectiveArrayDayThree[6] != 1)
+                    {
+                        SawLegs.sawOffLegLeft();
+                    }
+                    //Picking up the body
+                    if (raycastHit.transform.TryGetComponent(out repick) && ObjectiveChecker(7, true) == true && GameManager.objectiveArrayDayThree[7] != 1)
+                    {
+                        repick.PickUpBodyAfterHygiene();
+                    }
+                    if (raycastHit.transform.TryGetComponent(out burnBody) && ObjectiveChecker(8, true) == true && GameManager.objectiveArrayDayThree[8] != 1)
+                    {
+                        burnBody.BurningBody();
+                    }
+                }
+                if (SceneManager.GetActiveScene().name == "Morgue 4")
+                {
+
+                    //Taking the Body Out
+                    if (raycastHit.transform.TryGetComponent(out bodyCabinet) && bodyEquipped != true && GameManager.objectiveArrayDayFour[0] != 1)
+                    {
+                        if (GameManager.objectiveArrayDayFour[0] != 1)
+                        {
+                            bodyCabinet.BodyOut();
+                        }
+                    }
+                    //Placing the body down
+                    if (raycastHit.transform.TryGetComponent(out bodyBed) && ObjectiveChecker(1, true) == true && GameManager.objectiveArrayDayFour[1] != 1)
+                    {
+                        bodyBed.bodyDown();
+                    }
+                    //Wash Hands
+                    if (raycastHit.transform.TryGetComponent(out washHands) && ObjectiveChecker(2, true) == true && GameManager.objectiveArrayDayFour[2] != 1)
+                    {
+                        washHands.washHands();
+                    }
+                    //Wash body
+                    if (raycastHit.transform.TryGetComponent(out washBody) && ObjectiveChecker(3, true) == true && GameManager.objectiveArrayDayFour[3] != 1)
+                    {
+                        washBody.washBody();
+                    }
+                    //Hygiene kit
+                    if (raycastHit.transform.TryGetComponent(out hygiene) && ObjectiveChecker(4, true) == true && GameManager.objectiveArrayDayFour[4] != 1)
+                    {
+                        hygiene.HygieneKit();
+                    }
+                }
                 if (SceneManager.GetActiveScene().name == "Apartment")
                 {
                     if (raycastHit.transform.TryGetComponent(out Bed) && GameManager.DayOver == true)
@@ -277,6 +362,7 @@ public class InventoryTwo : MonoBehaviour
                         StartCoroutine(FinishWorkText());
                     }
                 }
+             
 
 
                 //Taking the body out in Day 2
@@ -391,12 +477,30 @@ public class InventoryTwo : MonoBehaviour
             }
 
         }
+        if (SceneManager.GetActiveScene().name == "Morgue 4")
+        {
+            for (int i = 0; i < length; i++)
+            {
+                if (GameManager.objectiveArrayDayFour[i] != 1)
+                {
+                    conditionMet = false;
+                    break;
+                }
+            }
+            if (conditionMet == true)
+            {
+                return conditionMet;
+            }
+            else
+            {
+                return conditionMet;
+            }
+
+        }
         else
         {
             return false;
         }
-
-
     }
     public IEnumerator FinishWorkText()
     {

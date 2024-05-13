@@ -4,21 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BurnBody : MonoBehaviour
+public class sawLegs : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] InventoryTwo inventoryTwo;
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] gameManager GameManager;
-    [SerializeField] GameObject Smoke;
-    [SerializeField] GameObject Colliders;
     [SerializeField] Animator anim;
+    [SerializeField] Animator tableAnim;
+    [SerializeField] GameObject Colliders;
 
     // Start is called before the first frame update
     void Start()
     {
         Colliders.SetActive(false);
-        Smoke.SetActive(false);
         player = GameObject.Find("Player");
         inventoryTwo = player.GetComponent<InventoryTwo>();
         GameManagerObj = GameObject.Find("gameManager");
@@ -34,58 +33,58 @@ public class BurnBody : MonoBehaviour
             inventoryTwo = player.GetComponent<InventoryTwo>();
         }
     }
-    public void BurningBody()
+    public void sawOffLegRight()
     {
+        tableAnim.SetBool("BodyYes3", false);
+        anim.SetBool("SawRight", true);
         Colliders.SetActive(true);
-        if(SceneManager.GetActiveScene().name =="Morgue 3")
-            anim.SetBool("Burn2", true);
-        else
-        {
-            anim.SetBool("Burn", true);
-        }
-        inventoryTwo.bodyEquipped = false;
-        StartCoroutine(Burning());
-
+        inventoryTwo.kitEquipped = false;
+        StartCoroutine(SawingRight());
     }
-    public IEnumerator Burning()
+    public IEnumerator SawingRight()
     {
-        yield return new WaitForSeconds(2f);
-        Smoke.SetActive(true);
-        yield return new WaitForSeconds(8f);
-        GameManager.changeObjText("Go home");
+        yield return new WaitForSeconds(5f);
         Colliders.SetActive(false);
-        if(SceneManager.GetActiveScene().name =="Morgue 3")
-        {
-            updateList2();
+        anim.SetBool("SawRight", false);
+        GameManager.changeObjText("Saw off the left leg! Hurry!");
+        updateList();
+    }
 
-        }
-        else
-        {
-            updateList();
-
-        }
-        GameManager.taskFinished = true;
+    public void sawOffLegLeft()
+    {
+        anim.SetBool("SawLeft", true);
+        Colliders.SetActive(true);
+        StartCoroutine(SawingLeft());
+    }
+    public IEnumerator SawingLeft()
+    {
+        yield return new WaitForSeconds(5.5f);
+        Colliders.SetActive(false);
+        anim.SetBool("SawRight", false);
+        anim.SetBool("SawLeft", false);
+        GameManager.changeObjText("Time to burn and call it a day");
+        updateListTwo();
     }
     public void updateList()
     {
         if (SceneManager.GetActiveScene().name == "Morgue 1")
-            GameManager.objectiveArrayDayOne[7] = 1;
+            GameManager.objectiveArrayDayOne[5] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 2")
-            GameManager.objectiveArrayDayTwo[7] = 1;
+            GameManager.objectiveArrayDayTwo[5] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 3")
-            GameManager.objectiveArrayDayThree[7] = 1;
+            GameManager.objectiveArrayDayThree[5] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 4")
-            GameManager.objectiveArrayDayFour[7] = 1;
+            GameManager.objectiveArrayDayFour[5] = 1;
     }
-    public void updateList2()
+    public void updateListTwo()
     {
         if (SceneManager.GetActiveScene().name == "Morgue 1")
-            GameManager.objectiveArrayDayOne[8] = 1;
+            GameManager.objectiveArrayDayOne[6] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 2")
-            GameManager.objectiveArrayDayTwo[8] = 1;
+            GameManager.objectiveArrayDayTwo[6] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 3")
-            GameManager.objectiveArrayDayThree[8] = 1;
+            GameManager.objectiveArrayDayThree[6] = 1;
         if (SceneManager.GetActiveScene().name == "Morgue 4")
-            GameManager.objectiveArrayDayFour[8] = 1;
+            GameManager.objectiveArrayDayFour[6] = 1;
     }
 }

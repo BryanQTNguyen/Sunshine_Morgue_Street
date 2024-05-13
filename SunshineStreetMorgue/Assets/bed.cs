@@ -36,7 +36,9 @@ public class bed : MonoBehaviour
             SceneToo = "Day Two";
         if (GameManager.DayNumber == 3)
             SceneToo = "Day Three";
-        if(GameManager == null)
+        if (GameManager.DayNumber == 4)
+            SceneToo = "Day Three";
+        if (GameManager == null)
         {
             GameManagerObj = GameObject.Find("gameManager");
             GameManager = GameManagerObj.GetComponent<gameManager>();
@@ -58,6 +60,8 @@ public class bed : MonoBehaviour
             SceneToo = "Day Two";
         if (GameManager.DayNumber == 3)
             SceneToo = "Day Three";
+        if (GameManager.DayNumber == 4)
+            SceneToo = "Day Four";
         sceneController.searchScenes(SceneToo);
     }
 }
