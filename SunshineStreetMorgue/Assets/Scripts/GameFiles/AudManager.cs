@@ -42,7 +42,7 @@ public class AudManager : MonoBehaviour
     }
     public void Update()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu" && musicType != 1)
+        if((SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "EndGame") && musicType != 1)
         {
             PlayMusic("ApartAmbient");
             rainSource.volume = 0;

@@ -168,8 +168,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 229468046}
     - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
       propertyPath: musicSounds.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: sfxSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3846ce573aa4d84eace461d71138998, type: 3}
+    - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
+      propertyPath: sfxSounds.Array.data[1].name
+      value: JumpScare
       objectReference: {fileID: 0}
     - target: {fileID: 6489377882987240503, guid: a1c52a2d88cd2af47bb347ee40254cfb, type: 3}
       propertyPath: musicSounds.Array.data[1].clip
