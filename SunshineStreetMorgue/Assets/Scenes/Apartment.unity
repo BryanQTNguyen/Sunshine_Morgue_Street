@@ -8431,7 +8431,9 @@ MonoBehaviour:
   inventoryTwo: {fileID: 0}
   GameManagerObj: {fileID: 0}
   GameManager: {fileID: 0}
+  SceneManagerObj: {fileID: 0}
   sceneController: {fileID: 0}
+  SceneToo: 
 --- !u!65 &1395302802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9896,7 +9898,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864472718086300984, guid: 6fa47f66ee14b3544bbf082d712f1ed5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653412415954037233, guid: 6fa47f66ee14b3544bbf082d712f1ed5, type: 3}
       propertyPath: m_Pivot.x
@@ -10006,6 +10008,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4653412415954037233, guid: 6fa47f66ee14b3544bbf082d712f1ed5, type: 3}
   m_PrefabInstance: {fileID: 1081257457096256570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1081257457096256572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 864472718086300984, guid: 6fa47f66ee14b3544bbf082d712f1ed5, type: 3}
+  m_PrefabInstance: {fileID: 1081257457096256570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2307950065293184356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10054,6 +10061,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1081257457096256572}
     - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
       propertyPath: transitionAnim
       value: 

@@ -112,9 +112,11 @@ public class gameManager : MonoBehaviour
     {
         if(death == true)
         {
+            death = false;
             Destroy(gameObject);
         }
-        if ((SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3" && SceneManager.GetActiveScene().name != "Morgue 4") && pulse == false && death == false)
+        if ((SceneManager.GetActiveScene().name != "Morgue 1" && SceneManager.GetActiveScene().name != "Morgue 2" && SceneManager.GetActiveScene().name != "Morgue 3" && SceneManager.GetActiveScene().name != "Morgue 4" && SceneManager.GetActiveScene().name != "MainMenu" &&
+            SceneManager.GetActiveScene().name != "EndGame") && pulse == false && death == false)
         {
             if (PrimaryObjective[0] == 0)
                 changeObjText("Get out the apartment");

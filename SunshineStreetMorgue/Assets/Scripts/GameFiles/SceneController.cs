@@ -9,16 +9,6 @@ public class SceneController : MonoBehaviour
     private bool SceneCoolDown = true;
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        else
-        {
-            Destroy(gameObject);
-        }
 
         canvas = GameObject.Find("Canvas");
         transitionAnim = canvas.GetComponent<Animator>();

@@ -6544,6 +6544,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 864472718136809983}
+    - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 4880134304680482924}
     - target: {fileID: 4017384702862076562, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
       propertyPath: m_Name
       value: SceneController
@@ -7138,7 +7146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7024570472576753003, guid: 20d0cb5228cfa8e49b6cdf134e99d179, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.403
+      value: 0.566
       objectReference: {fileID: 0}
     - target: {fileID: 7024570472576753003, guid: 20d0cb5228cfa8e49b6cdf134e99d179, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33147,7 +33155,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: af20c0ae045989b44aa3a795d03798cf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d631a81513b3430499946682e064f13d, type: 2}
+      objectReference: {fileID: 2100000, guid: 28e112d40afa36d4db62a01f3c2e5535, type: 2}
     - target: {fileID: 919132149155446097, guid: af20c0ae045989b44aa3a795d03798cf, type: 3}
       propertyPath: m_Name
       value: DeadBodyEquip

@@ -6877,6 +6877,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 864472718136809983}
+    - target: {fileID: 578816480168997191, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 4880134304680482924}
     - target: {fileID: 4017384702862076562, guid: 0096e4e982e612b488cf59607ee8ab2b, type: 3}
       propertyPath: m_Name
       value: SceneController
